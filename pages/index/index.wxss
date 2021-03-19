@@ -1,0 +1,13 @@
+.banner-activity {
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.banner-activity image {
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.grid-group{
+  margin-top: 20px;
+}
