@@ -23,7 +23,7 @@ Page({
   },
   submitForm() {
     let userInfo = wx.setStorageSync("userInfo", 'abc')
-    wx.navigateTo({ url: '/pages/index/index' });
+    wx.switchTab({ url: '/pages/index/index' });
     // this.selectComponent('#form').validate((valid, errors) => {
     //   if (!valid) {
     //     const firstError = Object.keys(errors)

@@ -10,6 +10,6 @@ Page({
   onLoad: function () {
     let userInfo = wx.getStorageSync("userInfo")
     if (!userInfo)
-      wx.navigateTo({ url: '/pages/login/index' });
+      wx.redirectTo({ url: '/pages/login/login' });
   }
 })

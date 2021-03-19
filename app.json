@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
-    "pages/login/index"
+    "pages/car/car",
+    "pages/driver/driver",
+    "pages/task-set/task-set",
+    "pages/data-center/data-center"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,25 +40,25 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/car/car",
         "iconPath": "images/nav/car1.png",
         "selectedIconPath": "images/nav/car2.png",
         "text": "车辆信息"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/driver/driver",
         "iconPath": "images/nav/person1.png",
         "selectedIconPath": "images/nav/person2.png",
         "text": "司机"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/task-set/task-set",
         "iconPath": "images/nav/worklist1.png",
         "selectedIconPath": "images/nav/worklist2.png",
         "text": "任务台"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/data-center/data-center",
         "iconPath": "images/nav/data1.png",
         "selectedIconPath": "images/nav/data2.png",
         "text": "数据中心"
