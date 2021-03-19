@@ -1,0 +1,9 @@
+.title{
+  text-align: center;
+}
+
+.logo{
+  height: 60rpx;
+  width: 60rpx;
+  vertical-align: middle;
+}

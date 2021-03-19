@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "App",
+    "navigationBarTitleText": "智慧新能源",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
@@ -18,46 +19,44 @@
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
     "van-button": "@vant/weapp/button/index",
-
-    "mp-tabbar": "weui-miniprogram/tabbar/tabbar",
     "mp-form": "weui-miniprogram/form/form",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell"
   },
   "tabBar": {
-    "color": "#6e6d6b",
-    "selectedColor": "#e64340",
-    "borderStyle": "white",
-    "backgroundColor": "#fff",
+    "color": "#7A7E83",
+    "selectedColor": "#07C160",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "iconPath": "images/nav/home1.png",
+        "selectedIconPath": "images/nav/home2.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "iconPath": "images/nav/car1.png",
+        "selectedIconPath": "images/nav/car2.png",
         "text": "车辆信息"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "iconPath": "images/nav/person1.png",
+        "selectedIconPath": "images/nav/person2.png",
         "text": "司机"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "iconPath": "images/nav/worklist1.png",
+        "selectedIconPath": "images/nav/worklist2.png",
         "text": "任务台"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/my-off.png",
-        "selectedIconPath": "images/nav/my-on.png",
+        "iconPath": "images/nav/data1.png",
+        "selectedIconPath": "images/nav/data2.png",
         "text": "数据中心"
       }
     ]
