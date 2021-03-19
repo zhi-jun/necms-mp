@@ -1,2 +1,5 @@
-<!--pages/car.wxml-->
-<text>pages/car.wxml</text>
+<view class="container">
+  <van-grid class="grid-group" gutter="{{ 10 }}">
+    <van-grid-item icon="photo-o" text="文字" wx:for="{{ 4 }}" bindtap="onViewChange" />
+  </van-grid>
+</view>

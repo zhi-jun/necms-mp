@@ -7,6 +7,6 @@
     </block>
   </swiper>
   <van-grid class="grid-group" gutter="{{ 10 }}">
-    <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" bindtap="onViewChange" />
+    <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
   </van-grid>
 </view>

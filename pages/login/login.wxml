@@ -11,7 +11,7 @@
     </mp-cells>
     <mp-cells>
       <mp-cell show-error prop="password" title="密码" ext-class="">
-        <input bindinput="formInputChange" data-field="password" class="weui-input" placeholder="请输入密码" />
+        <input bindinput="formInputChange" data-field="password" password='true' class="weui-input" placeholder="请输入密码" />
       </mp-cell>
     </mp-cells>
     <view class="weui-btn-area">
