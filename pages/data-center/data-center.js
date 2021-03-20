@@ -61,5 +61,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  jump2Detail(){
+    wx.navigateTo({ url: '/pages/data-center-detail/data-center-detail' });
   }
 })

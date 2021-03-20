@@ -29,7 +29,8 @@
     <view wx:for="{{ result }}" wx:key="index" class="i-card">
       <!-- title -->
       <view class="i-card-title">
-        <text> 车架号:{{ item.no }} </text>
+        <image src="/images/pages/auto.svg" ></image>
+        <text> 车架号 :  {{ item.no }} </text>
       </view>
       <view class="i-card-content">
         <text>所属机构：企业+下级</text>

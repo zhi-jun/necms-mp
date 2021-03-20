@@ -1,5 +1,64 @@
 /* pages/car.wxss */
-.desc{
-  font-size: 28rpx;
-  color:#ccc;
+
+.container-wrapper-db {
+  height: 100%;
+  width: 100%;
+  background-color: #f6f6f6;
+  overflow: auto;
+}
+
+.i-card-link{
+    background-color: #fff;
+    margin:  30rpx;
+    /* padding: 10px 20px; */
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 5rpx rgb(18 18 18 / 10%);
+    box-sizing: border-box;
+}
+
+.i-card-link-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  padding:0 20rpx;
+}
+.i-card-link-title text{
+  font-weight: 500;
+  font-family: -apple-system,'Microsoft Yahei', BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 
+    sans-serif;
+}
+.i-card-link-title-head{
+  display: flex;
+  align-items: center;
+}
+
+.i-card-link-title-head image{
+  height:28rpx;
+  width:28rpx;
+  color:green;
+  margin-right: 6rpx;
+}
+
+.i-card-link-grid{
+  display: flex;
+  justify-content: space-between;
+ padding: 20rpx;
+}
+.i-card-link-grid .i-card-link-grid-item{
+  padding: 20rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.i-card-link-grid-item .num{
+  font-size: 36rpx;
+}
+
+.i-card-link-grid-item .desc{
+  font-size: 24rpx;
+  color:#ccc
 }

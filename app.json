@@ -1,5 +1,7 @@
 {
   "pages": [  
+    
+    "pages/data-center/data-center",
     "pages/data-center-detail/data-center-detail",
     "pages/index/index",
     "pages/login/login",
@@ -8,8 +10,7 @@
     "pages/car-list/car-list",
     "pages/car/car",
     "pages/driver/driver",
-    "pages/task-set/task-set",
-    "pages/data-center/data-center"
+    "pages/task-set/task-set"
   ],
   "window": {
     "backgroundTextStyle": "light",
