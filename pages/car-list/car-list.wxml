@@ -1,20 +1,18 @@
 <view class="page">
   <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
   <scroll-view scroll-y="true" style="height: 1280rpx;">
-    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-      <view class="feed-item">
-        <view class="feed-source">
-          <text>车架号：AA123456789</text>
-        </view>
-        <view class="feed-content">
-          <view class="answer-body">
-            <view>
-              <text class="answer-txt">所属组织机构：企业+下级机构车牌号：皖A00001</text>
-            </view>
-            <view class="answer-actions"></view>
-          </view>
-        </view>
+    <view class="list-item" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="list-title">
+        <text>车架号：AA123456789</text>
       </view>
-    </block>
+      <view class="list-content">
+        <text>所属组织机构：企业+下级机构 \n 车牌号：皖A00001</text>
+      </view>
+      <view class="list-options">
+        <van-button icon="location-o" type="info" plain size="small" class="btn">查看定位</van-button>
+        <van-button icon="desktop-o" type="info" plain size="small" class="btn">设备工单</van-button>
+        <van-button icon="setting-o" type="info" plain size="small" class="btn">维修工单</van-button>
+      </view>
+    </view>
   </scroll-view>
 </view>
