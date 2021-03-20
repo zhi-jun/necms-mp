@@ -1,7 +1,7 @@
 <view class="page">
   <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
   <scroll-view scroll-y="true" style="height: 1280rpx;">
-    <view class="list-item" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="list-item" wx:for="{{carList}}" wx:key="index">
       <view class="list-title">
         <text>车架号：AA123456789</text>
       </view>

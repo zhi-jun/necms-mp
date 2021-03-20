@@ -2,7 +2,7 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
-    feed: [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    carList: [1, 1, 1, 1, 1, 1, 1, 1, 1]
   },
   onLoad() {
     this.setData({
@@ -21,6 +21,6 @@ Page({
     wx.showToast({ title: this.detail })
   },
   searchData() {
-    this.feed = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    this.carList = [1, 1, 1, 1, 1, 1, 1, 1, 1]
   }
 });
