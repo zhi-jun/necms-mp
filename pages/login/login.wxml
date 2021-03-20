@@ -1,21 +1,22 @@
-<view>
-  <view class="title" style="margin-top:300rpx;margin-bottom:100rpx;">
-    <image src="/images/logo.png" class="logo" />
-    绿色新能源
-  </view>
-  <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-    <mp-cells>
-      <mp-cell show-error prop="username" title="用户名" ext-class="">
-        <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名" />
-      </mp-cell>
-    </mp-cells>
-    <mp-cells>
-      <mp-cell show-error prop="password" title="密码" ext-class="">
-        <input bindinput="formInputChange" data-field="password" password='true' class="weui-input" placeholder="请输入密码" />
-      </mp-cell>
-    </mp-cells>
-    <view class="weui-btn-area">
-      <button class="weui-btn" type="primary" bindtap="submitForm" style="width:100%;">确定</button>
+<view class="page" style="height: 100%;">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <mp-form-page>
+    <view class="title" style="margin-bottom:100rpx;">
+      <image src="/images/logo.png" class="logo" />
+      绿色新能源
     </view>
-  </mp-form>
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+      <mp-cells>
+        <mp-cell prop="username" title="用户名" ext-class="">
+          <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名" />
+        </mp-cell>
+        <mp-cell prop="password" title="密码" ext-class="">
+          <input bindinput="formInputChange" data-field="password" password="true" class="weui-input" placeholder="请输入密码" />
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+    <view slot="button">
+      <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </mp-form-page>
 </view>

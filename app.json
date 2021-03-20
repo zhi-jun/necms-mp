@@ -1,9 +1,11 @@
 {
-  "pages": [
-  
+  "pages": [  
     "pages/login/login",
     "pages/index/index",
+    "pages/car-add/car-add",
     "pages/car/car",
+    "pages/car-detail/car-detail",
+    "pages/car-list/car-list",
     "pages/driver/driver",
     "pages/task-set/task-set",
     "pages/data-center-detail/data-center-detail",
@@ -28,11 +30,16 @@
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-search": "@vant/weapp/search/index",
     "van-button": "@vant/weapp/button/index",
-    "mp-form": "weui-miniprogram/form/form",
+
+    "mp-form-page": "weui-miniprogram/form-page/form-page",
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell",
     "mp-col": "@miniprogram-component-plus/col",
-    "mp-row": "@miniprogram-component-plus/row"
+    "mp-row": "@miniprogram-component-plus/row",
+    "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
+    "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-form": "weui-miniprogram/form/form"
   },
   "tabBar": {
     "color": "#7A7E83",
