@@ -1,29 +1,15 @@
+<wxs src="./data-center-detail.wxs" module="computed"></wxs>
 <view class="container">
-  <van-dropdown-menu style="width:100%;">
-    <van-dropdown-item id="item" title="{{ itemTitle }}">
-      <van-cell title="{{ switchTitle1 }}">
-        <van-switch slot="right-icon" size="24px" style="height: 26px" checked="{{ switch1 }}" active-color="#ee0a24" bind:change="onSwitch1Change" />
-      </van-cell>
-      <van-cell title="{{ switchTitle2 }}">
-        <van-switch slot="right-icon" size="24px" style="height: 26px" checked="{{ switch2 }}" active-color="#ee0a24" bind:change="onSwitch2Change" />
-      </van-cell>
-      <view style="padding: 5px 16px;">
-        <van-button type="danger" block round bind:click="onConfirm">确认</van-button>
-      </view>
-    </van-dropdown-item>
-    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  </van-dropdown-menu>
-  <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" style="width:100%;" bind:change="onChange" bind:search="onSearch">
-    <van-button slot="action" plain hairline type="primary" size="small" bind:click="onClick">
-      搜索
-    </van-button>
+  <van-cell is-link title="申请日期" bind:click="onCalendarShow" style="width:100%;" value="{{ computed.formatRange(dateRange1) }}" />
+  <!-- <van-cell is-link title="合同日期" data-type="range" bind:click="onCalendarShow" style="width:100%;" value="{{ computed.formatFullDate(date.dateRange2) }}" /> -->
+  <van-calendar type="range" max-range="{{ 3 }}" />
+  <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
+    <view slot="action" bind:tap="onSearch">搜索</view>
   </van-search>
   <!-- 搜索结果 -->
   <view class="container-wrapper">
-    <!-- 空数据搜索提示 -->
     <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
     <view wx:for="{{ result }}" wx:key="index" class="i-card">
-      <!-- title -->
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
         <text>车架号 :  {{ item.no }}</text>
@@ -45,4 +31,5 @@
       </view>
     </view>
   </view>
+  <van-calendar show="{{ showCalendar }}" bind:confirm="onConfirm" type="range" round="false" />
 </view>

@@ -1,13 +1,12 @@
 {
-  "pages": [  
-    
-    "pages/data-center/data-center",
+  "pages": [
     "pages/data-center-detail/data-center-detail",
     "pages/index/index",
+    "pages/data-center/data-center",
     "pages/login/login",
+    "pages/car-list/car-list",
     "pages/car-detail/car-detail",
     "pages/car-add/car-add",
-    "pages/car-list/car-list",
     "pages/car/car",
     "pages/driver/driver",
     "pages/task-set/task-set"
@@ -29,10 +28,9 @@
     "van-col": "@vant/weapp/col/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-image": "@vant/weapp/image/index",
-    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
-    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-search": "@vant/weapp/search/index",
     "van-button": "@vant/weapp/button/index",
+    "van-calendar": "@vant/weapp/calendar/index",
 
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-toptips": "weui-miniprogram/toptips/toptips",

@@ -1,0 +1,9 @@
+function formatRange(dateRange) {
+  if (dateRange.length) {
+    return dateRange[0] + ' - ' + dateRange[1];
+  }
+}
+
+module.exports = {
+  formatRange: formatRange
+};

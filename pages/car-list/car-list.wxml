@@ -1,18 +1,33 @@
-<view class="page">
-  <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
-  <scroll-view scroll-y="true" style="height: 1280rpx;">
-    <view class="list-item" wx:for="{{carList}}" wx:key="index">
-      <view class="list-title">
-        <text>车架号：AA123456789</text>
+<view class="container">
+  <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+  <!-- 搜索结果 -->
+  <view class="container-wrapper">
+    <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
+    <view wx:for="{{ result }}" wx:key="index" class="i-card">
+      <view class="i-card-title">
+        <image src="/images/pages/auto.svg"></image>
+        <text>车架号 :  {{ item.no }}</text>
       </view>
-      <view class="list-content">
-        <text>所属组织机构：企业+下级机构 \n 车牌号：皖A00001</text>
+      <view class="i-card-content">
+        <text>所属机构：企业+下级</text>
+        <van-row>
+          <van-col span="12">所属分组：</van-col>
+          <van-col span="12">车辆类型：</van-col>
+        </van-row>
+        <van-row>
+          <van-col span="12">车牌号：</van-col>
+          <van-col span="12">总行驶时长：</van-col>
+        </van-row>
       </view>
-      <view class="list-options">
-        <van-button icon="location-o" type="info" plain size="small" class="btn">查看定位</van-button>
-        <van-button icon="desktop-o" type="info" plain size="small" class="btn">设备工单</van-button>
-        <van-button icon="setting-o" type="info" plain size="small" class="btn">维修工单</van-button>
+      <view class="card-options">
+        <van-button icon="location-o" type="default" plain size="small" class="btn">
+          查看定位
+        </van-button>
+        <van-button icon="desktop-o" type="default" plain size="small" class="btn">设备工单</van-button>
+        <van-button icon="setting-o" type="default" plain size="small" class="btn">维修工单</van-button>
       </view>
     </view>
-  </scroll-view>
+  </view>
 </view>

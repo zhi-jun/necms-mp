@@ -23,32 +23,47 @@ page {
   border-top:none;
 }
 
-.list-item{
-  padding: 30rpx 40rpx;
-  margin: 10rpx 0;
-  background: #ffffff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 5px #eeeeee;
+.search{
+  width:98%;
+  margin-right: 12rpx;
 }
-
-.list-item .list-title{
-  font-size: 18px;
-  line-height: 40rpx;
+/* i-card */
+.i-card {
+  background-color: #fff;
+  margin:  30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgb(18 18 18 / 10%);
+  box-sizing: border-box;
 }
-
-.list-item .list-content{
-  margin: 20rpx 0;
-  font-size: 14px;
-  line-height: 40rpx;
+.i-card-title{
+  display: flex;
+  align-items: center;
+  background-color: #514F4D;
+  border-radius: 10rpx 10rpx 0 0;
+  color:white;
+  padding: 0 20rpx;
+  height: 50rpx;
+  line-height:50rpx;
+  font-size: 22rpx;
+}
+.i-card-title image{
+  margin-right: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.i-card-content{
+  padding: 16rpx 20rpx;
+  font-size: 24rpx;
+  line-height: 46rpx;
   color: #5b5b5b;
 }
 
-.list-item .list-options{
-  height: 55rpx;
+.card-options{
+  height: 80rpx;
+  margin: 20rpx 20rpx;
 }
 
-.list-item .list-options .btn{
+.card-options .btn{
   float: right;
-  margin-left: 40rpx;
+  margin-left: 20rpx;
 }

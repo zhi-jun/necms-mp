@@ -3,7 +3,7 @@
   <view class="i-card-link" bindtap="jump2Detail">
     <view class="i-card-link-title">
       <view class="i-card-link-title-head">
-        <image src="/images/pages/charger.svg"></image>
+        <van-icon name="chart-trending-o" class="header-icon" />
         <text>行程时长统计</text>
       </view>
       <van-icon name="arrow" />
@@ -26,7 +26,10 @@
   <!-- 行程里程统计 -->
   <view class="i-card-link" bindtap="jump2Detail">
     <view class="i-card-link-title">
-      <text>行程里程统计</text>
+      <view class="i-card-link-title-head">
+        <van-icon name="chart-trending-o" class="header-icon" />
+        <text>行程里程统计</text>
+      </view>
       <van-icon name="arrow" />
     </view>
     <view class="i-card-link-grid">
@@ -47,7 +50,10 @@
   <!-- 充电统计 -->
   <view class="i-card-link" bindtap="jump2Detail">
     <view class="i-card-link-title">
-      <text>充电统计</text>
+      <view class="i-card-link-title-head">
+        <van-icon name="chart-trending-o" class="header-icon" />
+        <text>充电统计</text>
+      </view>
       <van-icon name="arrow" />
     </view>
     <view class="i-card-link-grid">
@@ -68,7 +74,10 @@
   <!-- 节碳统计 -->
   <view class="i-card-link" bindtap="jump2Detail">
     <view class="i-card-link-title">
-      <text>节碳统计</text>
+      <view class="i-card-link-title-head">
+        <van-icon name="chart-trending-o" class="header-icon" />
+        <text>节碳统计</text>
+      </view>
       <van-icon name="arrow" />
     </view>
     <view class="i-card-link-grid">
