@@ -1,14 +1,14 @@
 {
   "pages": [  
+    "pages/data-center-detail/data-center-detail",
     "pages/index/index",
+    "pages/login/login",
+    "pages/car-detail/car-detail",
     "pages/car-add/car-add",
     "pages/car-list/car-list",
-    "pages/login/login",
     "pages/car/car",
-    "pages/car-detail/car-detail",
     "pages/driver/driver",
     "pages/task-set/task-set",
-    "pages/data-center-detail/data-center-detail",
     "pages/data-center/data-center"
   ],
   "window": {
@@ -26,6 +26,8 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-image": "@vant/weapp/image/index",
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-search": "@vant/weapp/search/index",
