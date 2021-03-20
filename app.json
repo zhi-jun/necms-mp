@@ -37,11 +37,10 @@
     "mp-toptips": "weui-miniprogram/toptips/toptips",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell",
-    "mp-col": "@miniprogram-component-plus/col",
-    "mp-row": "@miniprogram-component-plus/row",
     "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
     "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
-    "mp-form": "weui-miniprogram/form/form"
+    "mp-form": "weui-miniprogram/form/form",
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
   },
   "tabBar": {
     "color": "#7A7E83",

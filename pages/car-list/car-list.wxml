@@ -1,3 +1,18 @@
-<view class="container">
-  <van-cell title="选择单个日期" bind:click="onDisplay" />
+<view class="page">
+  <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  <scroll-view scroll-y="true" style="height: 1280rpx;">
+    <view class="list-item" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="list-title">
+        <text>车架号：AA123456789</text>
+      </view>
+      <view class="list-content">
+        <text>所属组织机构：企业+下级机构 \n 车牌号：皖A00001</text>
+      </view>
+      <view class="list-options">
+        <van-button icon="location-o" type="info" plain size="small" class="btn">查看定位</van-button>
+        <van-button icon="desktop-o" type="info" plain size="small" class="btn">设备工单</van-button>
+        <van-button icon="setting-o" type="info" plain size="small" class="btn">维修工单</van-button>
+      </view>
+    </view>
+  </scroll-view>
 </view>

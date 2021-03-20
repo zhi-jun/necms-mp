@@ -15,7 +15,7 @@ Page({
 
   },
 
-  onViewChange(e){
-
+  onClick(e) {
+    wx.showToast({ title: '暂未开放' })
   }
 })

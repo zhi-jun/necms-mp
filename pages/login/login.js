@@ -21,8 +21,14 @@ Page({
 
   },
   submitForm() {
-    // let userInfo = wx.setStorageSync("userInfo", '1')
-    // wx.switchTab({ url: '/pages/index/index' });
+    wx.showToast({ title: '登录成功' })
+    let userInfo = wx.setStorageSync("userInfo", '1')
+
+    setTimeout(() => {
+      wx.switchTab({ url: '/pages/index/index' });
+    }, 500)
+
+
     // this.selectComponent('#form').validate((valid, errors) => {
     //   if (!valid) {
     //     const firstError = Object.keys(errors)

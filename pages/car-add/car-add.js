@@ -35,21 +35,23 @@ Page({
     })
   },
   submitForm() {
-    this.selectComponent('#form').validate((valid, errors) => {
-      console.log('valid', valid, errors)
-      if (!valid) {
-        const firstError = Object.keys(errors)
-        if (firstError.length) {
-          this.setData({
-            error: errors[firstError[0]].message
-          })
+    wx.showToast({ title: '添加成功' })
 
-        }
-      } else {
-        wx.showToast({
-          title: '校验通过'
-        })
-      }
-    })
+    setTimeout(() => {
+      wx.redirectTo({ url: '/pages/car-list/car-list' });
+    }, 500)
+
+    // this.selectComponent('#form').validate((valid, errors) => {
+    //   console.log('valid', valid, errors)
+    //   if (!valid) {
+    //     const firstError = Object.keys(errors)
+    //     if (firstError.length) {
+    //       this.setData({
+    //         error: errors[firstError[0]].message
+    //       })
+
+    //     }
+    //   } 
+    // })
   }
 });
