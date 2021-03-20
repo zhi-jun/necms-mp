@@ -3,5 +3,5 @@
 }
 
 .weui-form__control-area{
-  margin-top: 0;
+  margin-top: 10rpx;
 }
