@@ -1,7 +1,7 @@
 {
-  "pages": [  
-    "pages/car-list/car-list",
+  "pages": [
     "pages/index/index",
+    "pages/car-list/car-list",
     "pages/car-add/car-add",
     "pages/login/login",
     "pages/car/car",
