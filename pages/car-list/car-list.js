@@ -1,21 +1,26 @@
-// pages/car.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    inputShowed: false,
+    inputVal: "",
+    feed: [1, 1, 1, 1, 1, 1, 1, 1, 1]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    this.setData({
+      search: this.search.bind(this)
+    })
   },
-
-  onViewChange(e){
-
+  search: function (value) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this.searchData()
+        resolve()
+      }, 200)
+    })
+  },
+  selectResult: function (e) {
+    wx.showToast({ title: this.detail })
+  },
+  searchData() {
+    this.feed = [1, 1, 1, 1, 1, 1, 1, 1, 1]
   }
-})
+});

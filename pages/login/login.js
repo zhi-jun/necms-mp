@@ -21,6 +21,8 @@ Page({
 
   },
   submitForm() {
+    wx.showToast({ title: '登录成功' })
+
     let userInfo = wx.setStorageSync("userInfo", '1')
     wx.switchTab({ url: '/pages/index/index' });
     // this.selectComponent('#form').validate((valid, errors) => {
