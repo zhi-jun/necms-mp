@@ -10,14 +10,14 @@
         </mp-cell>
         <mp-cell ext-class="weui-cell_select weui-cell_select-after">
           <view slot="title" class="weui-label">所属分组</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
-            <view class="weui-select">{{countries[countryIndex]}}</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
+            <view class="weui-select">{{accounts[countryIndex]}}</view>
           </picker>
         </mp-cell>
         <mp-cell ext-class="weui-cell_select weui-cell_select-after">
           <view slot="title" class="weui-label">车辆类型</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
-            <view class="weui-select">{{countries[countryIndex]}}</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
+            <view class="weui-select">{{accounts[countryIndex]}}</view>
           </picker>
         </mp-cell>
         <mp-cell prop="qq" title="车架号" ext-class="">
@@ -28,8 +28,8 @@
         </mp-cell>
         <mp-cell ext-class="weui-cell_select weui-cell_select-after">
           <view slot="title" class="weui-label">使用用途</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
-            <view class="weui-select">{{countries[countryIndex]}}</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
+            <view class="weui-select">{{accounts[countryIndex]}}</view>
           </picker>
         </mp-cell>
         <mp-cell prop="qq" title="车主姓名" ext-class="">

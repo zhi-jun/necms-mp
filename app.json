@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/car-list/car-list",
+
     "pages/index/index",
     "pages/login/login",
-    "pages/car-add/car-add",
-
     "pages/car/car",
+    "pages/car-add/car-add",
     "pages/car-detail/car-detail",
-    "pages/car-list/car-list",
     "pages/driver/driver",
     "pages/task-set/task-set",
     "pages/data-center/data-center"
