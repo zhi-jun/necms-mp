@@ -5,7 +5,6 @@
     "pages/car-list/car-list",
     "pages/login/login",
     "pages/car/car",
-    "pages/car-add/car-add",
     "pages/car-detail/car-detail",
     "pages/driver/driver",
     "pages/task-set/task-set",
