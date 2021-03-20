@@ -1,0 +1,3 @@
+<view class="container">
+  <van-cell title="选择单个日期" bind:click="onDisplay" />
+</view>

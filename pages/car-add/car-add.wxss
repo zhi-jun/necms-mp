@@ -1,0 +1,7 @@
+.weui-form{
+  padding: 0;
+}
+
+.weui-form__control-area{
+  margin-top: 0;
+}

@@ -1,0 +1,50 @@
+<view class="page">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <mp-form-page>
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+      <mp-cells>
+        <mp-cell has-header="{{false}}" ext-class="weui-cell_select">
+          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+            <view class="weui-select">所属组织机构</view>
+          </picker>
+        </mp-cell>
+        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+          <view slot="title" class="weui-label">所属分组</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+            <view class="weui-select">{{countries[countryIndex]}}</view>
+          </picker>
+        </mp-cell>
+        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+          <view slot="title" class="weui-label">车辆类型</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+            <view class="weui-select">{{countries[countryIndex]}}</view>
+          </picker>
+        </mp-cell>
+        <mp-cell prop="qq" title="车架号" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车架号" />
+        </mp-cell>
+        <mp-cell prop="qq" title="车牌号" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车牌号" />
+        </mp-cell>
+        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+          <view slot="title" class="weui-label">使用用途</view>
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+            <view class="weui-select">{{countries[countryIndex]}}</view>
+          </picker>
+        </mp-cell>
+        <mp-cell prop="qq" title="车主姓名" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车主姓名" />
+        </mp-cell>
+        <mp-cell prop="qq" title="车主手机号" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车主手机号" />
+        </mp-cell>
+        <mp-cell prop="qq" title="经销商名称" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入经销商名称" />
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+    <view slot="button">
+      <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </mp-form-page>
+</view>
