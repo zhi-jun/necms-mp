@@ -1,1 +1,70 @@
-<text>pages/data-center.wxml</text>
+<view>
+  <view>
+    <van-cell title="行程时长统计" is-link />
+  </view>
+  <van-grid column-num="3">
+    <van-grid-item use-slot>
+      <text class="num">120</text>
+      <text class="desc">车辆总数</text>
+    </van-grid-item>
+    <van-grid-item use-slot>
+      <text class="num">120</text>
+      <text class="desc">行程总时长(h)</text>
+    </van-grid-item>
+    <van-grid-item use-slot>
+      <text class="num">120</text>
+      <text class="desc">今日总时长(h)</text>
+    </van-grid-item>
+  </van-grid>
+</view>
+<text>行程里程统计</text>
+<van-grid column-num="3">
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">车辆总数</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>110</text>
+    <text class="desc">行程总里程(h)</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">今日总里程(h)</text>
+  </van-grid-item>
+</van-grid>
+
+<text>充电统计</text>
+<van-grid column-num="3">
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">车辆总数</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">充电次数</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">充电总时长(h)</text>
+  </van-grid-item>
+</van-grid>
+
+<text>节碳统计</text>
+<van-grid column-num="4">
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">车辆总数</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">行驶次数</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">行驶里程</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <text>120</text>
+    <text class="desc">减排量(吨)</text>
+  </van-grid-item>
+</van-grid>

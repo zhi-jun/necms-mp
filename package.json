@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@miniprogram-component-plus/col": "^1.0.0",
+    "@miniprogram-component-plus/row": "^1.0.0",
     "@vant/weapp": "^1.6.8",
     "weui-miniprogram": "^1.0.7"
   }

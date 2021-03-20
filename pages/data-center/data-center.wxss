@@ -1,1 +1,5 @@
 /* pages/car.wxss */
+.desc{
+  font-size: 28rpx;
+  color:#ccc;
+}
