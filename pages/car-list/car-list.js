@@ -37,8 +37,8 @@ Page({
   onNavigateDetail() {
     wx.navigateTo({ url: '/pages/car-detail/car-detail' });
   },
-  onNavigateOrder() {
-    wx.navigateTo({ url: '/pages/car-order/car-order' });
+  onNavigateRepair() {
+    wx.navigateTo({ url: '/pages/car-repair/car-repair' });
   },
   onNavigateDevice() {
     wx.navigateTo({ url: '/pages/car-device/car-device' });

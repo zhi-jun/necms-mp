@@ -27,10 +27,10 @@
         <van-button icon="location-o" type="primary" plain size="small" class="btn">
           查看定位
         </van-button>
-        <van-button icon="desktop-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateOrder">
+        <van-button icon="desktop-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice">
           设备工单
         </van-button>
-        <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice">
+        <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair">
           维修工单
         </van-button>
       </view>

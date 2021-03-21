@@ -8,8 +8,8 @@
     <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
     <view wx:for="{{ result }}" wx:key="index" class="i-card">
       <view class="i-card-title">
-        <image src="/images/pages/auto.svg"></image>
-        <text>车架号 :  {{ item.no }}</text>
+        <image src="/images/pages/tool.svg"></image>
+        <text>工单号 :  {{ item.no }}</text>
       </view>
       <view class="i-card-content">
         <text>所属机构：企业+下级</text>
