@@ -22,11 +22,11 @@
         </van-row>
       </view>
       <view class="card-options">
-        <van-button icon="location-o" type="default" plain size="small" class="btn">
+        <van-button icon="location-o" type="primary" plain size="small" class="btn">
           查看定位
         </van-button>
-        <van-button icon="desktop-o" type="default" plain size="small" class="btn">设备工单</van-button>
-        <van-button icon="setting-o" type="default" plain size="small" class="btn">维修工单</van-button>
+        <van-button icon="desktop-o" type="primary" plain size="small" class="btn">设备工单</van-button>
+        <van-button icon="setting-o" type="primary" plain size="small" class="btn">维修工单</van-button>
       </view>
     </view>
   </view>

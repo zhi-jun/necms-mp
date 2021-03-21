@@ -48,7 +48,7 @@
 
 .i-card-link-grid-item .num{
   font-size: 40rpx;
-  color:#07C160;
+  color:#2BA245;
   /* color: #10aeff; */
 }
 

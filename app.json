@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/data-center-detail/data-center-detail",
     "pages/index/index",
+
+    "pages/car-list/car-list",
+    "pages/data-center-detail/data-center-detail",
     "pages/data-center/data-center",
     "pages/login/login",
-    "pages/car-list/car-list",
     "pages/car-detail/car-detail",
     "pages/car-add/car-add",
     "pages/car/car",
@@ -43,7 +44,7 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#07C160",
+    "selectedColor": "#2BA245",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

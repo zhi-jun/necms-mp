@@ -38,7 +38,7 @@ page {
 .i-card-title{
   display: flex;
   align-items: center;
-  background-color: #514F4D;
+  background-color: #2BA245;
   border-radius: 10rpx 10rpx 0 0;
   color:white;
   padding: 0 20rpx;
