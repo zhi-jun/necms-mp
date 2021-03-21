@@ -25,7 +25,7 @@ Page({
     let userInfo = wx.setStorageSync("userInfo", '1')
 
     setTimeout(() => {
-      wx.switchTab({ url: '/pages/index/index' });
+      wx.switchTab({ url: '/pages/home/home' });
     }, 500)
 
 

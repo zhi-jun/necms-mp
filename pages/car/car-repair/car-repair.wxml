@@ -1,4 +1,4 @@
-<view class="container-list">
+<view class="container">
   <view style="height: 110rpx">
     <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onSearch">搜索</view>

@@ -1,9 +1,8 @@
-<view class="i-card">
-  <view class="i-card-title">
-    <image src="/images/pages/auto.svg"></image>
+<view class="container">
+  <view class="info-title">
     <text>定位及终端</text>
   </view>
-  <view class="i-card-content">
+  <view class="info-content">
     <van-row>
       <van-col span="8" class="card-label">所属组织机构：</van-col>
       <van-col span="16">企业+下级机构</van-col>
@@ -45,13 +44,11 @@
       <van-col span="16">xxxx</van-col>
     </van-row>
   </view>
-</view>
-<view class="i-card">
-  <view class="i-card-title">
-    <image src="/images/pages/auto.svg"></image>
+
+  <view class="info-title">
     <text>极值数据</text>
   </view>
-  <view class="i-card-content">
+  <view class="info-content">
     <van-row>
       <van-col span="8" class="card-label">所属组织机构：</van-col>
       <van-col span="16">企业+下级机构</van-col>

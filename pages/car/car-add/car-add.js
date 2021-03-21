@@ -38,7 +38,7 @@ Page({
     wx.showToast({ title: '添加成功' })
 
     setTimeout(() => {
-      wx.redirectTo({ url: '/pages/car-list/car-list' });
+      wx.redirectTo({ url: '/pages/car/car-list/car-list' });
     }, 500)
 
     // this.selectComponent('#form').validate((valid, errors) => {

@@ -1,0 +1,3 @@
+.van-cell__value{
+  min-width: 60%;
+}

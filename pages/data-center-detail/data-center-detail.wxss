@@ -1,8 +1,0 @@
-/* pages/car.wxss */
-.container {
-  overflow: hidden;
-}
-
-.van-cell__value{
-  min-width: 60%;
-}

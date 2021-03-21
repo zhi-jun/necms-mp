@@ -1,18 +1,19 @@
 {
-  "pages": [  
-    "pages/map/track/track",
-    "pages/map/index/index",
-    "pages/car-list/car-list",
-    "pages/data-center-detail/data-center-detail",
-    "pages/car-detail/car-detail",
-    "pages/car-repair/car-repair",
-    "pages/car-device/car-device",
-    "pages/car-add/car-add",
-    "pages/data-center/data-center",
+  "pages": [
+    "pages/home/home",
     "pages/login/login",
-    "pages/car/car",
-    "pages/driver/driver",
-    "pages/task-set/task-set"
+    "pages/map/map-track/map-track",
+    "pages/map/map-index/map-index",
+    "pages/car/car-list/car-list",
+    "pages/car/car-index/car-index",
+    "pages/car/car-repair/car-repair",
+    "pages/car/car-add/car-add",
+    "pages/car/car-device/car-device",
+    "pages/car/car-detail/car-detail",
+    "pages/data-center/data-center-index/data-center-index",
+    "pages/data-center/data-center-list/data-center-list",
+    "pages/driver/driver-index/driver-index",
+    "pages/task-set/task-set-index/task-set-index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,31 +52,31 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "iconPath": "images/nav/home.png",
         "selectedIconPath": "images/nav/home-h.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/car/car",
+        "pagePath": "pages/car/car-index/car-index",
         "iconPath": "images/nav/car.png",
         "selectedIconPath": "images/nav/car-h.png",
         "text": "车辆信息"
       },
       {
-        "pagePath": "pages/driver/driver",
+        "pagePath": "pages/driver/driver-index/driver-index",
         "iconPath": "images/nav/person.png",
         "selectedIconPath": "images/nav/person-h.png",
         "text": "司机"
       },
       {
-        "pagePath": "pages/task-set/task-set",
+        "pagePath": "pages/task-set/task-set-index/task-set-index",
         "iconPath": "images/nav/worklist.png",
         "selectedIconPath": "images/nav/worklist-h.png",
         "text": "任务台"
       },
       {
-        "pagePath": "pages/data-center/data-center",
+        "pagePath": "pages/data-center/data-center-index/data-center-index",
         "iconPath": "images/nav/data.png",
         "selectedIconPath": "images/nav/data-h.png",
         "text": "数据中心"

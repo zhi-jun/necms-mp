@@ -1,4 +1,4 @@
-// pages/car/car-detail/car-detail.js
+// pages/car.js
 Page({
 
   /**
@@ -12,7 +12,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -62,5 +61,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  jump2Detail() {
+    wx.navigateTo({ url: '/pages/data-center/data-center-list/data-center-list' });
   }
 })

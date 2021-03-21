@@ -35,13 +35,16 @@ Page({
     console.log('搜索' + this.data.value);
   },
   onNavigateDetail() {
-    wx.navigateTo({ url: '/pages/car-detail/car-detail' });
+    wx.navigateTo({ url: '/pages/car/car-detail/car-detail' });
   },
   onNavigateRepair() {
-    wx.navigateTo({ url: '/pages/car-repair/car-repair' });
+    wx.navigateTo({ url: '/pages/car/car-repair/car-repair' });
   },
   onNavigateDevice() {
-    wx.navigateTo({ url: '/pages/car-device/car-device' });
+    wx.navigateTo({ url: '/pages/car/car-device/car-device' });
+  },
+  onNavigateMap() {
+    wx.navigateTo({ url: '/pages/map/map-track/map-track' });
   },
   noop() { },
   onReachBottom() {

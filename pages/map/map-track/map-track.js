@@ -1,5 +1,5 @@
 // pages/map/map.js
-const { convert2TecentMap,compareVersion } = require('../../../utils/util')
+const { convert2TecentMap, compareVersion } = require('../../../utils/util')
 const app = getApp()
 Page({
 
@@ -5566,25 +5566,25 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    const tecentMap= this.data.jdata.map(p=>{
-      let tp=convert2TecentMap(p.lng,p.lat)
-      return {...p,lat:tp.lat,lng:tp.lng}
+    const tecentMap = this.data.jdata.map(p => {
+      let tp = convert2TecentMap(p.lng, p.lat)
+      return { ...p, lat: tp.lat, lng: tp.lng }
     })
     console.log(tecentMap)
     this.setData({
       polyline: [{
-        points: tecentMap.map(p=>{return {latitude:p.lat,longitude:p.lng }}),
+        points: tecentMap.map(p => { return { latitude: p.lat, longitude: p.lng } }),
         color: "#3875FF",
         width: 6,
         dottedLine: false
       }],
       markers: [{
         id: 0,
-        latitude:tecentMap[0].lat,
+        latitude: tecentMap[0].lat,
         longitude: tecentMap[0].lng,
         width: 16,
-			  height: 20,
-			  iconPath: 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/car.png',
+        height: 20,
+        iconPath: 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/car.png',
       }],
       latitude: tecentMap[0].lat,
       longitude: tecentMap[0].lng,
@@ -5645,15 +5645,15 @@ Page({
   beginTrack: function () {
     const version = wx.getSystemInfoSync().SDKVersion;
 
-		if (compareVersion(version, '2.13.0') < 0) {
-			// 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-			wx.showToast({
-				title: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。',
-				icon: 'none'
-			});
-			return;
+    if (compareVersion(version, '2.13.0') < 0) {
+      // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
+      wx.showToast({
+        title: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。',
+        icon: 'none'
+      });
+      return;
     }
-    
+
     const mapCtx = wx.createMapContext('map', this);
     if (this.data.isDisabled) {
       return;
@@ -5669,7 +5669,7 @@ Page({
     mapCtx.moveAlong({
       markerId: 0,
       path: this.data.polyline[0].points,
-      duration: 10000,
+      duration: 60 * 1000,
       autoRotate: true
     });
   },
