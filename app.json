@@ -1,7 +1,7 @@
 {
-  "pages": [
-    "pages/index/index",
-    
+  "pages": [  
+    "pages/map/track/track",
+    "pages/map/index/index",
     "pages/car-list/car-list",
     "pages/data-center-detail/data-center-detail",
     "pages/car-detail/car-detail",
