@@ -11,5 +11,9 @@ Page({
     let userInfo = wx.getStorageSync("userInfo")
     if (!userInfo)
       wx.redirectTo({ url: '/pages/login/login' });
+  },
+
+  onClick(e) {
+    wx.showToast({ title: '暂未开放' })
   }
 })
