@@ -1,10 +1,10 @@
-var util = require('../../utils/util.js')
 
 Page({
   data: {
     showCalendar: false,
-    dateRange1: [],
-    dateRange2: [],
+    minDate: new Date(2021, 0, 1).getTime(),
+    maxDate: new Date().getTime(),
+    dateRange1: [new Date(new Date() - 7 * 24 * 3600 * 1000).getTime(), new Date().getTime()],
     value1: 0,
     result: [
       { no: 'xxxxxsdsdsd', org: '企业+下级', group: '所属分组：', cardType: '', cardNo: '车牌号', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
@@ -47,7 +47,7 @@ Page({
   },
   onConfirm(e) {
     this.setData({
-      dateRange1: e.detail.map(date => util.formatDate(new Date(date.valueOf()))),
+      dateRange1: e.detail.map(date => new Date(date.valueOf()).getTime()),
       showCalendar: false
     });
   },

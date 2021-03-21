@@ -1,7 +1,9 @@
-<view class="container">
-  <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
-    <view slot="action" bind:tap="onSearch">搜索</view>
-  </van-search>
+<view class="container-list">
+  <view style="height: 110rpx">
+    <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+  </view>
   <!-- 搜索结果 -->
   <view class="container-wrapper">
     <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
@@ -33,5 +35,6 @@
         </van-button>
       </view>
     </view>
+    <mp-loading type="circle"></mp-loading>
   </view>
 </view>

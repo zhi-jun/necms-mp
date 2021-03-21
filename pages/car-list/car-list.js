@@ -43,5 +43,8 @@ Page({
   onNavigateDevice() {
     wx.navigateTo({ url: '/pages/car-device/car-device' });
   },
-  noop() { }
+  noop() { },
+  onReachBottom() {
+    console.log('************', 111);
+  }
 })
