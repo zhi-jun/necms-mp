@@ -84,12 +84,14 @@ page {
 }
 
 .info-title{
-  font-size: 26rpx;
-  height: 70rpx;
-  line-height:70rpx;
-  background-color:#2BA245;
-  color: white;
-  padding-left: 20rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  border-left: 10rpx solid #91d300;
+  background-color:#cde6c7;
+  border-radius:0 6rpx 6rpx 0;
+  font-weight: bold;
+  color: #5b5b5b;
+  padding: 8rpx 16rpx; 
 }
 .info-content{
   font-size: 24rpx;

@@ -16,10 +16,10 @@
         <text>所属机构：企业+下级</text>
         <van-row>
           <van-col span="12">所属分组：</van-col>
-          <van-col span="12">车辆类型：</van-col>
+           <van-col span="12">车辆类型：{{ item.carType }}</van-col>
         </van-row>
         <van-row>
-          <van-col span="12">车牌号：</van-col>
+          <van-col span="12">车牌号：{{item.cardNo}}</van-col>
           <van-col span="12">总行驶时长：</van-col>
         </van-row>
       </view>
@@ -28,7 +28,7 @@
           查看定位
         </van-button>
         <van-button icon="desktop-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice">
-          设备工单
+          设备数据
         </van-button>
         <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair">
           维修工单

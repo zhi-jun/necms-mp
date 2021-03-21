@@ -18,7 +18,7 @@
         <text>所属机构：企业+下级</text>
         <van-row>
           <van-col span="12">所属分组：</van-col>
-          <van-col span="12">车辆类型：</van-col>
+           <van-col span="12">车辆类型：{{ item.carType }}</van-col>
         </van-row>
         <van-row>
           <van-col span="12">车牌号：</van-col>

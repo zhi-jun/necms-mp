@@ -1,0 +1,12 @@
+.tab-wrap{
+  padding-top: 40rpx;
+}
+.info-title{
+  font-size: 22rpx;
+}
+.info-content{
+  font-size: 22rpx;
+  margin: 14rpx 0;
+  line-height: 40rpx;
+  color: #5b5b5b;
+}
