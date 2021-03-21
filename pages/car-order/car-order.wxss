@@ -1,0 +1,4 @@
+/* pages/car.wxss */
+.container {
+  overflow: hidden;
+}

@@ -1,6 +1,7 @@
 /**app.wxss**/
 page {
   height:100%;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
     Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
     sans-serif;
@@ -45,7 +46,8 @@ page {
 .i-card-title{
   display: flex;
   align-items: center;
-  background-color: #2BA245;
+  /* background-color: #2BA245; */
+  background-color: #514F4D;
   border-radius: 10rpx 10rpx 0 0;
   color:white;
   padding: 0 20rpx;
