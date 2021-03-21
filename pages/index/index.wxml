@@ -6,4 +6,10 @@
       </swiper-item>
     </block>
   </swiper>
+  <van-grid class="grid-group" gutter="{{ 20 }}" column-num="2" style="width:90%;">
+    <van-grid-item icon="add-o" link-type="navigateTo" url="/pages/car-add/car-add" text="添加车辆" />
+    <van-grid-item icon="search" link-type="navigateTo" url="/pages/car-list/car-list" text="查看车辆" />
+    <van-grid-item icon="other-pay" link-type="navigateTo" url="" text="通行指令" />
+    <van-grid-item icon="setting-o" link-type="navigateTo" url="" text="设置" />
+  </van-grid>
 </view>

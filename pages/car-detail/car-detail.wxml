@@ -1,2 +1,48 @@
-<!--pages/car/car-detail/car-detail.wxml-->
-<text>pages/car/car-detail/car-detail.wxml</text>
+<view class="i-card">
+  <view class="i-card-title">
+    <image src="/images/pages/auto.svg"></image>
+    <text>车架号 :  {{ item.no }}</text>
+  </view>
+  <view class="i-card-content">
+    <van-row>
+      <van-col span="8" class="card-label">所属组织机构：</van-col>
+      <van-col span="16">企业+下级机构</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车牌号：</van-col>
+      <van-col span="16">皖A00001</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">所属分组：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车辆类型：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车架号：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车牌号：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">使用用途：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车主姓名：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">车主手机号：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="8" class="card-label">经销商名称：</van-col>
+      <van-col span="16">xxxx</van-col>
+    </van-row>
+  </view>
+</view>

@@ -33,18 +33,5 @@ Page({
     if (!this.data.value)
       return
     console.log('搜索' + this.data.value);
-  },
-  onNavigateDetail() {
-    wx.navigateTo({ url: '/pages/car-detail/car-detail' });
-  },
-  onNavigateOrder() {
-    wx.navigateTo({ url: '/pages/car-order/car-order' });
-  },
-  onNavigateDevice() {
-    wx.navigateTo({ url: '/pages/car-device/car-device' });
-  },
-  noop() { },
-  onReachBottom() {
-    console.log('************', 111);
   }
 })

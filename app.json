@@ -2,13 +2,14 @@
   "pages": [  
     "pages/map/track/track",
     "pages/map/index/index",
-    "pages/data-center/data-center",
-    "pages/data-center-detail/data-center-detail",
-    "pages/index/index",
-    "pages/login/login",
-    "pages/car-detail/car-detail",
-    "pages/car-add/car-add",
     "pages/car-list/car-list",
+    "pages/data-center-detail/data-center-detail",
+    "pages/car-detail/car-detail",
+    "pages/car-order/car-order",
+    "pages/car-device/car-device",
+    "pages/car-add/car-add",
+    "pages/data-center/data-center",
+    "pages/login/login",
     "pages/car/car",
     "pages/driver/driver",
     "pages/task-set/task-set"
@@ -30,10 +31,9 @@
     "van-col": "@vant/weapp/col/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-image": "@vant/weapp/image/index",
-    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
-    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-search": "@vant/weapp/search/index",
     "van-button": "@vant/weapp/button/index",
+    "van-calendar": "@vant/weapp/calendar/index",
 
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-toptips": "weui-miniprogram/toptips/toptips",
@@ -42,42 +42,42 @@
     "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
     "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
     "mp-form": "weui-miniprogram/form/form",
-    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+    "mp-loading": "weui-miniprogram/loading/loading"
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#07C160",
+    "selectedColor": "#2BA245",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/home1.png",
-        "selectedIconPath": "images/nav/home2.png",
+        "iconPath": "images/nav/home.png",
+        "selectedIconPath": "images/nav/home-h.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/car/car",
-        "iconPath": "images/nav/car1.png",
-        "selectedIconPath": "images/nav/car2.png",
+        "iconPath": "images/nav/car.png",
+        "selectedIconPath": "images/nav/car-h.png",
         "text": "车辆信息"
       },
       {
         "pagePath": "pages/driver/driver",
-        "iconPath": "images/nav/person1.png",
-        "selectedIconPath": "images/nav/person2.png",
+        "iconPath": "images/nav/person.png",
+        "selectedIconPath": "images/nav/person-h.png",
         "text": "司机"
       },
       {
         "pagePath": "pages/task-set/task-set",
-        "iconPath": "images/nav/worklist1.png",
-        "selectedIconPath": "images/nav/worklist2.png",
+        "iconPath": "images/nav/worklist.png",
+        "selectedIconPath": "images/nav/worklist-h.png",
         "text": "任务台"
       },
       {
         "pagePath": "pages/data-center/data-center",
-        "iconPath": "images/nav/data1.png",
-        "selectedIconPath": "images/nav/data2.png",
+        "iconPath": "images/nav/data.png",
+        "selectedIconPath": "images/nav/data-h.png",
         "text": "数据中心"
       }
     ]
