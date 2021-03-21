@@ -1,6 +1,7 @@
 {
   "pages": [  
-    
+    "pages/map/track/track",
+    "pages/map/index/index",
     "pages/data-center/data-center",
     "pages/data-center-detail/data-center-detail",
     "pages/index/index",
