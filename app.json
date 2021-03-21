@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/car-detail/car-detail",
 
     "pages/car-list/car-list",
+    "pages/car-add/car-add",
+    "pages/index/index",
     "pages/data-center-detail/data-center-detail",
     "pages/data-center/data-center",
     "pages/login/login",
-    "pages/car-detail/car-detail",
-    "pages/car-add/car-add",
     "pages/car/car",
     "pages/driver/driver",
     "pages/task-set/task-set"

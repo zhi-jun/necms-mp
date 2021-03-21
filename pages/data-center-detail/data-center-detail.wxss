@@ -3,13 +3,6 @@
   overflow: hidden;
 }
 
-.container-wrapper {
-  height: 100%;
-  width: 100%;
-  background-color: #f6f6f6;
-  overflow: auto;
-}
-
 .van-cell__value{
   min-width: 60%;
 }

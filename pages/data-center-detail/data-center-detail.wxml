@@ -31,5 +31,5 @@
       </view>
     </view>
   </view>
-  <van-calendar show="{{ showCalendar }}" bind:confirm="onConfirm" type="range" round="false" />
+  <van-calendar show="{{ showCalendar }}" bind:confirm="onConfirm" bind:close="onClosed" type="range" round="false" />
 </view>

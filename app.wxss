@@ -16,7 +16,14 @@ page {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-} 
+}
+
+.container-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 40rpx;
+}
 
 /* 去除 cell 上边框 */
 .weui-cells:before {
@@ -66,4 +73,9 @@ page {
 .card-options .btn{
   float: right;
   margin-left: 20rpx;
+}
+
+.card-label .van-col{
+  text-align: right;
+  padding-right: 20rpx;
 }

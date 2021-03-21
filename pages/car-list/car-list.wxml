@@ -5,7 +5,7 @@
   <!-- 搜索结果 -->
   <view class="container-wrapper">
     <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
-    <view wx:for="{{ result }}" wx:key="index" class="i-card">
+    <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail">
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
         <text>车架号 :  {{ item.no }}</text>
@@ -21,7 +21,7 @@
           <van-col span="12">总行驶时长：</van-col>
         </van-row>
       </view>
-      <view class="card-options">
+      <view class="card-options" catch:tap="noop">
         <van-button icon="location-o" type="primary" plain size="small" class="btn">
           查看定位
         </van-button>

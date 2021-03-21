@@ -51,4 +51,7 @@ Page({
       showCalendar: false
     });
   },
+  onClosed() {
+    this.setData({ showCalendar: false });
+  }
 })
