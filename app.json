@@ -1,11 +1,9 @@
 {
   "pages": [
-    "pages/car-list/car-list",
-
     "pages/index/index",
+    
+    "pages/car-list/car-list",
     "pages/data-center-detail/data-center-detail",
-
-
     "pages/car-detail/car-detail",
     "pages/car-order/car-order",
     "pages/car-device/car-device",
