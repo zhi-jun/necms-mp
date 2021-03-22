@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/map/map-track/map-track",
+
     "pages/home/home",
     "pages/login/login",
-    "pages/map/map-track/map-track",
     "pages/map/map-index/map-index",
+
     "pages/car/car-index/car-index",
     "pages/car/car-add/car-add",
     "pages/car/car-device/car-device",

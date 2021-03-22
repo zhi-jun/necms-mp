@@ -1,1 +1,21 @@
 /* pages/map/map.wxss */
+.map-track-wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.map-track-body{
+  flex:auto;
+}
+
+.cover-view{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.map-footer{
+  flex:none; 
+}
+.mp-footer-main{
+  overflow: auto;
+}

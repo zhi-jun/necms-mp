@@ -1,1 +1,22 @@
 /* pages/map/map.wxss */
+.map-wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.map-body{
+  flex:auto
+}
+.map-footer{
+  padding: 20rpx;
+  font-size: 22rpx;
+}
+.map-footer view:first-child{
+  font-weight: 700;
+  font-size: 28rpx;
+}
+.cover-view{
+  text-align: right;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+}

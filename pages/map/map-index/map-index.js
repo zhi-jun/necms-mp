@@ -1,18 +1,23 @@
 // pages/map/map.js
-// 引用百度地图微信小程序JSAPI模块 
-const app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    height: wx.getSystemInfoSync().windowHeight-20,
     latitude: 31.806758834482746,
     longitude: 117.19289068329981,
     isDisabled: false,
     markers: [],
     polyline: [],
-    pointsInfo: [],
+    mapInfo:{
+      cardNo:'LZWADDDSS1235555543',
+      type:'2014款 1.5LS豪华型',
+      lat:31.806758834482746,
+      lng:117.19289068329981,
+      status:'ACC关闭,GPS已经定位',
+      lastTime:'2021-3-22 20:41:43',
+      address:'安徽省合肥市高新区望江路1号'
+    }
   },
 
   /**
@@ -27,6 +32,14 @@ Page({
         longitude: this.data.longitude,
         width: 25,
         height: 30,
+        callout: {
+          content: this.data.mapInfo.address,
+          padding: 10,
+          borderRadius: 2,
+          display: 'ALWAYS',
+          bgColor:'#1989fa',
+          color:'#fff'
+        },
       }],
       latitude: this.data.latitude,
       longitude: this.data.longitude,
@@ -81,4 +94,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  refresh(){
+    console.log('刷新数据')
+  }
 })

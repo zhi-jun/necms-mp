@@ -1,14 +1,17 @@
 <!--pages/map/map.wxml-->
-<map id="map" 
-  longitude="{{longitude}}" 
-  latitude="{{latitude}}" 
-  scale="16" 
-  markers="{{markers}}" 
-  polyline="{{polyline}}" 
-  show-location
-  style="width: 100%; height:{{height}}px;">
+<view class="map-wrapper">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}"
+    polyline="{{polyline}}" show-location style="width: 100%;" class="map-body">
+    <cover-view class="cover-view">
+      <van-button type="info" custom-style="opacity:0.7" round icon="replay" bind:click="refresh" />
+    </cover-view>
   </map>
-
-<view class="padding flex flex-wrap justify-between align-center bg-white">
-  <button class='cu-btn bg-green shadow sm'>{{ latitude}} ,{{ longitude}} </button>
+  <view class="map-footer">
+    <view>车架号: {{mapInfo.cardNo}}</view>
+    <view>车型:{{mapInfo.type}}</view>
+    <view>经纬度：{{ mapInfo.lat}} ,{{ mapInfo.lng}}</view>
+    <view>状态:{{mapInfo.status}}</view>
+    <view>最后时间:{{mapInfo.lastTime}}</view>
+    <view>最后地址:{{ mapInfo.address}}</view>
+  </view>
 </view>

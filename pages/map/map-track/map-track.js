@@ -7,6 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showCalendar:false,
+    showCalendar: false,
+    minDate: new Date(2021, 0, 1).getTime(),
+    maxDate: new Date().getTime(),
+    dateRange1: [new Date(new Date() - 7 * 24 * 3600 * 1000).getTime(), new Date().getTime()],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     height: wx.getSystemInfoSync().windowHeight - 50,
@@ -5558,7 +5563,8 @@ Page({
         "cchargeSts": "",
         "cworkSts": null
       }
-    ]
+    ],
+    isCollospae: true
   },
 
   /**
@@ -5589,6 +5595,8 @@ Page({
       latitude: tecentMap[0].lat,
       longitude: tecentMap[0].lng,
     })
+
+   
   },
 
   /**
@@ -5642,7 +5650,7 @@ Page({
   /**
   * 开始
   */
-  beginTrack: function () {
+ start: function () {
     const version = wx.getSystemInfoSync().SDKVersion;
 
     if (compareVersion(version, '2.13.0') < 0) {
@@ -5669,7 +5677,7 @@ Page({
     mapCtx.moveAlong({
       markerId: 0,
       path: this.data.polyline[0].points,
-      duration: 60 * 1000,
+      duration: 10 * 1000,
       autoRotate: true
     });
   },
@@ -5679,5 +5687,39 @@ Page({
   pauseTrack: function () {
     var that = this;
     clearInterval(this.timer)
-  }
+  },
+  onConfirm() {
+    this.selectComponent('#item').toggle();
+  },
+
+  onSwitch1Change({ detail }) {
+    this.setData({ switch1: detail });
+  },
+
+  onSwitch2Change({ detail }) {
+    this.setData({ switch2: detail });
+  },
+
+  onChange(e) {
+    this.setData({
+      value: e.detail,
+    });
+  },
+  onCalendarShow() {
+    this.setData({ showCalendar: true });
+  },
+  onConfirm(e) {
+    this.setData({
+      dateRange1: e.detail.map(date => new Date(date.valueOf()).getTime()),
+      showCalendar: false
+    });
+  },
+  onClosed() {
+    this.setData({ showCalendar: false });
+  },
+  handleCollspa (event) {
+    this.setData({
+      isCollospae: !this.data.isCollospae,
+    });
+  },
 })
