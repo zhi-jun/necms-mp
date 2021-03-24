@@ -6,17 +6,13 @@ const request = (options, cb) => {
   if (options.url.indexOf('http') != 0) {
     options.url = baseUrl + options.url;
   }
-  // method、data
-  if (options.method === undefined || options.method === null) {
-    options.method = 'post';
-  }
 
   //执行微信的请求
   wx.request(
     {
       ...options,
       header: {
-        'token': wx.getStorageSync('token') // 默认值
+        'token': wx.getStorageSync('token')
       },
       success(res) {
         if (res.statusCode === 401)
