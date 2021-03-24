@@ -1,3 +1,5 @@
+const { request } = require('../../../utils/ajax')
+
 Page({
   data: {
     value: '',
@@ -33,6 +35,14 @@ Page({
     if (!this.data.value)
       return
     console.log('搜索' + this.data.value);
+    request({
+      url: '/xxx',
+      data: {},
+      method: 'POST'
+    },
+      res => {
+        console.log(res, '成功')
+      })
   },
   onNavigateDetail() {
     wx.navigateTo({ url: '/pages/car/car-detail/car-detail' });

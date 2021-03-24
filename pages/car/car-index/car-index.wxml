@@ -2,6 +2,6 @@
   <van-grid class="grid-group" gutter="{{ 20 }}" column-num="2" style="width: 100%;position: absolute;top: 200rpx;">
     <van-grid-item icon="add-o" link-type="navigateTo" url="/pages/car/car-add/car-add" text="添加车辆" />
     <van-grid-item icon="search" link-type="navigateTo" url="/pages/car/car-list/car-list" text="查看车辆" />
-    <van-grid-item icon="other-pay" link-type="navigateTo" url="" text="通信指令" bind:tap="onClick" />
+    <van-grid-item icon="other-pay" link-type="navigateTo" url="/pages/car/car-signal/car-signal" text="通信指令" />
   </van-grid>
 </view>
