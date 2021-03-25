@@ -3,19 +3,54 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: constant(safe-area-inset-bottom);     /*兼容 iOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom);  /*兼容 iOS>11.2*/
 }
 .map-track-body{
   flex:auto;
+  position: relative;
+  z-index: inherit;
 }
 
 .cover-view{
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 999;
+  background-color: white;
+  opacity: 0.7;
 }
+.flex-wrp{
+  display:flex;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-item{
+  flex:1;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.flex-item cover-image{
+  height: 80rpx;
+  width: 80rpx;
+  margin: 0 auto;
+}
+
 .map-footer{
-  flex:none; 
+  flex: none;
+  max-height: 30%;
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
 }
 .mp-footer-main{
   overflow: auto;
+  flex:auto
+}
+.mp-footer-card {
+  padding: 20rpx;
+  font-size: 24rpx;
 }

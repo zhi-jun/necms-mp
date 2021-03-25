@@ -1,31 +1,46 @@
 <!--pages/map/map.wxml-->
 <view class="map-track-wrapper">
-  <van-cell is-link title="查询范围" bind:click="onCalendarShow" style="width:100%;"
+  <van-cell is-link title="查询范围" bind:click="onCalendarShow" style="width:100%;flex:none"
     value="{{ computed.formatRange(dateRange1) }}" />
   <map id="map" class="map-track-body" scale="14" longitude="{{longitude}}" latitude="{{latitude}}"
-    markers="{{markers}}" polyline="{{polyline}}" bindregionchange="regionchange" bindcontroltap="controltap"
-    bindmarkertap="markertap" show-location style="width: 100%;">
+    markers="{{markers}}" polyline="{{polyline}}" show-location style="width: 100%;">
     <cover-view class="cover-view">
-      <van-grid clickable column-num="3">
-        <van-grid-item icon="replay" bindclick="reset" />
-        <van-grid-item icon="play-circle-o" bindclick="start" />
-        <van-grid-item icon="pause-circle-o" bindclick="pause" />
-      </van-grid>
+      <cover-view class="container">
+        <cover-view class="flex-wrp" style="flex-direction:row;">
+          <cover-view class="flex-item" bindtap="endTrack">
+            <cover-image src="/images/pages/replay.png"></cover-image>
+          </cover-view>
+          <cover-view class="flex-item" wx:if="{{playIndex==0}}" bindtap="beginTrack">
+            <cover-image src="/images/pages/play.png"></cover-image>
+          </cover-view>
+          <cover-view class="flex-item" wx:else bindtap="pauseTrack">
+            <cover-image src="/images/pages/pause.png"></cover-image>
+          </cover-view>
+          <cover-view class="flex-item">
+            X1
+          </cover-view>
+        </cover-view>
+      </cover-view>
+      <!-- <van-grid clickable column-num="3" >
+        <van-grid-item icon="replay" bindclick="endTrack" />
+        <van-grid-item icon="play-circle-o" bindclick="beginTrack" />
+        <van-grid-item icon="pause-circle-o" bindclick="pauseTrack" />
+      </van-grid> -->
     </cover-view>
   </map>
 
   <view class="map-footer">
-    <van-cell title="查看更多" is-link :arrow-direction="down" bind:click="handleCollspa" />
-    <!-- <view wx:if="{{isCollospae}}" class="mp-footer-main">
-      <view wx:for="{{[1, 2, 3]}}">
-        <view>车架号: {{mapInfo.cardNo}}</view>
-        <view>车型:{{mapInfo.type}}</view>
-        <view>经纬度：{{ mapInfo.lat}} ,{{ mapInfo.lng}}</view>
-        <view>状态:{{mapInfo.status}}</view>
-        <view>最后时间:{{mapInfo.lastTime}}</view>
-        <view>最后地址:{{ mapInfo.address}}</view>
+
+    <van-cell title="点击查看详细信息" is-link arrow-direction="{{isCollospae?'up':'down' }}" bind:click="handleCollspa"
+      style="flex:none" />
+    <view wx:if="{{isCollospae}}" class="mp-footer-main">
+      <view wx:for="{{jdata}}" wx:key="index" class="mp-footer-card">
+        <view>时间:{{item.gtime}}</view>
+        <view>经纬度：{{ item.lat}} ,{{ item.lng}}</view>
+        <view>状态:{{item.gpsStatus}}</view>
+        <view>地址:{{ item.cworkSts}}</view>
       </view>
-    </view> -->
+    </view>
 
 
   </view>

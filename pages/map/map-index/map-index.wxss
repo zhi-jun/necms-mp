@@ -3,6 +3,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: constant(safe-area-inset-bottom);     /*兼容 iOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom);  /*兼容 iOS>11.2*/
 }
 .map-body{
   flex:auto
@@ -10,10 +12,17 @@
 .map-footer{
   padding: 20rpx;
   font-size: 22rpx;
+  position: relative;
 }
-.map-footer view:first-child{
+.map-footer .cardNo{
   font-weight: 700;
   font-size: 28rpx;
+}
+
+.map-footer .operator{
+  position: absolute;
+  top:20rpx;
+  right: 10rpx;
 }
 .cover-view{
   text-align: right;

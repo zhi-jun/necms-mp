@@ -5681,6 +5681,29 @@ Page({
       autoRotate: true
     });
   },
+  beginTrack:function(){
+    var that = this;
+    var i = that.data.playIndex == 0 ? 0 : that.data.playIndex;
+    that.timer = setInterval(function () {
+     i++
+     that.setData({
+      playIndex: i,
+      latitude: that.data.polyline[0].points[i].latitude,
+      longitude: that.data.polyline[0].points[i].longitude,
+      markers: [{
+      iconPath: 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/car.png',
+       id: 0,
+       latitude: that.data.polyline[0].points[i].latitude,
+       longitude: that.data.polyline[0].points[i].longitude,
+       width: 16,
+       height: 20,
+      }]
+     }) 
+     if ((i+1) >= that.data.polyline[0].points.length) { 
+      that.endTrack();
+     }
+    }, 500) 
+   }, 
   /**
    * 暂停
    */
@@ -5688,6 +5711,26 @@ Page({
     var that = this;
     clearInterval(this.timer)
   },
+  /**
+  * 结束
+  */
+ endTrack:function(){
+  var that = this; 
+  that.setData({
+   playIndex: 0,
+   latitude: that.data.polyline[0].points[0].latitude,
+   longitude: that.data.polyline[0].points[0].longitude,
+   markers: [{
+    iconPath: 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/car.png',
+    id: 0,
+    latitude: that.data.polyline[0].points[0].latitude,
+    longitude: that.data.polyline[0].points[0].longitude,
+    width: 16,
+    height: 20,
+   }]
+  }) 
+  clearInterval(this.timer)
+ },
   onConfirm() {
     this.selectComponent('#item').toggle();
   },
