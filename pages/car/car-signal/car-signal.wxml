@@ -7,25 +7,26 @@
   <view class="container-wrapper">
     <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
     <view wx:for="{{ result }}" wx:key="index" class="i-card">
-      <view class="i-card-title">
-        <image src="/images/pages/tool.svg"></image>
-        <text>工单号 :  {{ item.no }}</text>
+      <view class="i-card-title" wx:if="{{item.state == 1}}">
+        <image src="/images/pages/signal-success.svg"></image>
+        <text style="color:#07C160">应答 :  成功</text>
+      </view>
+      <view class="i-card-title" wx:else>
+        <image src="/images/pages/signal-error.svg"></image>
+        <text style="color:#FA5151">应答 :  失败</text>
       </view>
       <view class="i-card-content">
         <text>所属机构：企业+下级</text>
         <van-row>
-          <van-col span="12">维修人员：李四</van-col>
-          <van-col span="12">维修人员电话：13312341234</van-col>
+          <van-col span="12">所属分组：XX</van-col>
+          <van-col span="12">车辆类型：AA</van-col>
         </van-row>
         <van-row>
-          <van-col span="12">派单时间：</van-col>
-          <van-col span="12">工单关闭时间：</van-col>
+          <van-col span="12">车牌号：</van-col>
+          <van-col span="12">发生时间：</van-col>
         </van-row>
         <van-row>
-          <van-col span="24">故障描述：</van-col>
-        </van-row>
-        <van-row>
-          <van-col span="24">解决方案描述：</van-col>
+          <van-col span="24">消息内容：</van-col>
         </van-row>
       </view>
     </view>

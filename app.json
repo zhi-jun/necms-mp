@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/map/map-track/map-track",
-    "pages/map/map-index/map-index",
+    "pages/car/car-list/car-list",
     "pages/home/home",
     "pages/login/login",
+    "pages/map/map-index/map-index",
+    "pages/map/map-track/map-track",
     "pages/car/car-index/car-index",
     "pages/car/car-add/car-add",
     "pages/car/car-device/car-device",
     "pages/car/car-repair/car-repair",
-    "pages/car/car-list/car-list",
+    "pages/car/car-signal/car-signal",
     "pages/car/car-detail/car-detail",
     "pages/data-center/data-center-index/data-center-index",
     "pages/data-center/data-center-list/data-center-list",
