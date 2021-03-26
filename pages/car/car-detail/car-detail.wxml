@@ -1,43 +1,43 @@
 <view class="container">
   <view class="info-title">
-    <text>车架号 :  LSVG026R9F2086645</text>
+    <text>车架号 :  {{info.vin}}</text>
   </view>
   <view class="info-content">
     <van-row>
       <van-col span="8" class="card-label">所属组织机构：</van-col>
-      <van-col span="16">企业+下级机构</van-col>
+      <van-col span="16">{{info.companyName}} {{info.groupCodeName}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">车牌号：</van-col>
-      <van-col span="16">皖A00001</van-col>
+      <van-col span="16">{{info.licenseNo}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">所属分组：</van-col>
-      <van-col span="16">市场部</van-col>
+      <van-col span="16">{{info.belongGroupName}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">车辆类型：</van-col>
-      <van-col span="16">小轿车</van-col>
+      <van-col span="16">{{info.vehicleTypeName}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">车架号：</van-col>
-      <van-col span="16">LSVG026R9F2086645</van-col>
+      <van-col span="16">{{info.vin}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">使用用途：</van-col>
-      <van-col span="16">家用</van-col>
+      <van-col span="16">{{info.useTypeName}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">车主姓名：</van-col>
-      <van-col span="16">鲍莹莹</van-col>
+      <van-col span="16">{{info.name}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">车主手机号：</van-col>
-      <van-col span="16">13312341234</van-col>
+      <van-col span="16">{{info.mobileNo}}</van-col>
     </van-row>
     <van-row>
       <van-col span="8" class="card-label">经销商名称：</van-col>
-      <van-col span="16">上海领友科技有限公司</van-col>
+      <van-col span="16">{{info.companyName}}</van-col>
     </van-row>
   </view>
 </view>
