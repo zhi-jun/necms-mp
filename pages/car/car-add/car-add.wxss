@@ -18,3 +18,7 @@
 .weui-cell__hd_in-select-after{
   margin-left: 64rpx;
 }
+
+.weui-select{
+  padding-left: 0 !important;
+}

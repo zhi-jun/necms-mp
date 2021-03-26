@@ -8,7 +8,7 @@
   <!-- 搜索结果 -->
   <view class="container-wrapper">
     <van-empty wx:if="{{result.length == 0 && !isLoading}}" image="search" description="暂无数据" />
-    <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail">
+    <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail" data-vin='{{ item.vin }}'>
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
         <text>车架号 :  {{ item.vin }}</text>
@@ -32,16 +32,16 @@
         <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal">
           通信纪录
         </van-button> -->
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateMap">
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateMap" data-id='{{ item.id }}'>
           查看定位
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice">
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice" data-id='{{ item.id }}'>
           设备数据
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair">
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair" data-id='{{ item.id }}'>
           维修工单
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal">
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal" data-id='{{ item.id }}'>
           通信纪录
         </van-button>
       </view>

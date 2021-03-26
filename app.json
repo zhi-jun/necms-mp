@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/car/car-add/car-add",
-
     "pages/car/car-list/car-list",
 
-    "pages/login/login",
+    "pages/car/car-add/car-add",
 
+    "pages/login/login",
     
     "pages/home/home",
     "pages/map/map-index/map-index",

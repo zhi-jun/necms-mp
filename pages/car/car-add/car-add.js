@@ -7,7 +7,7 @@ Page({
     vehicleTypes: ["乘用车", "工程车", "矿卡", "LCV"],
     useTypes: ["出租车辆", "私家车", "公交车"],
     formData: {
-      groupCode: 0,
+      groupCode: wx.getStorageSync("groupCode"),
       companyCode: '',
       belongGroup: 0,
       vehicleType: 0,
@@ -52,6 +52,10 @@ Page({
     })
   },
   submitForm() {
+    if (!this.data.formData.groupCode) {
+      this.setData({ error: '组织机构必填' })
+      return
+    }
     if (!this.data.formData.vin) {
       this.setData({ error: '车架号必填' })
       return
@@ -61,44 +65,45 @@ Page({
       return
     }
 
-    console.log('************', {
-      ...this.data.formData,
-      groupCode: this.data.formData.vehicleType + 1
-    });
-
     request({
       url: '/applets/vehicle_info/saveVehicleInfo',
       data: {
         ...this.data.formData,
-        groupCode: this.data.formData.vehicleType + 1
+        vehicleType: this.data.formData.vehicleType + 1
       },
       method: 'POST'
     },
       res => {
         wx.showToast({ title: '添加成功' })
         setTimeout(() => {
-          wx.redirectTo({ url: '/pages/car/car-list/car-list' });
+          wx.switchTab({ url: '/pages/car/car-list/car-list' });
         }, 300)
       })
   },
   findSysGroupByTree() {
-    let list = [{
-      "nodeId": 20,
-      "nodeName": "一级分类",
-      "parentId": 0,
-    }, {
-      "nodeId": 21,
-      "nodeName": "二级分类",
-      "parentId": 20,
-    }, {
-      "nodeId": 22,
-      "nodeName": "二级分类1",
-      "parentId": 20,
-    }, {
-      "nodeId": 23,
-      "nodeName": "三级分类",
-      "parentId": 21,
-    }];
+    request({
+      url: '/applets/vehicle_info/findSysGroupByTree',
+      data: { groupCode: wx.getStorageSync("groupCode") },
+      method: 'get'
+    },
+      res => {
+        let list = []
+        this.loadTree(res.data, list)
+        this.bindTree(list)
+      })
+  },
+  loadTree(nodes, list) {
+    nodes.forEach(p => {
+      list.push({
+        "nodeId": p.id,
+        "nodeName": p.text,
+        "parentId": p.parentId,
+      })
+      if (p.nodes)
+        this.loadTree(p.nodes, list)
+    })
+  },
+  bindTree(list) {
     // 删除 所有 children,以防止多次调用
     list.forEach(function (item) {
       delete item.children;
