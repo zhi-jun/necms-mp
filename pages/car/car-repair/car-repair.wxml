@@ -1,3 +1,4 @@
+<wxs src="./car-repair.wxs" module="computed"></wxs>
 <view class="container">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <view class="search-warp">
@@ -11,12 +12,18 @@
     <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail" data-vin='{{ item.vin }}'>
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
-        <text>车架号 :  {{ item.vin }}</text>
+        <text>工单号 :  {{ item.orderNo }}</text>
       </view>
       <view class="i-card-content">
-        <text>所属组织机构：{{ item.companyName + ' '+ item.groupCodeName }}</text>
         <van-row>
-          <van-col span="12">车牌号：{{item.licenseNo}}</van-col>
+          <van-col span="12">维修人员：{{item.repairName}}</van-col>
+          <van-col span="12">维修人员电话：{{item.repairMobileNo}}</van-col>
+          <van-col span="12">派单时间：{{ computed.dateStr(item.dispatchTime)}}</van-col>
+          <van-col span="12">工单关闭时间：{{ computed.dateStr(item.closeTime) }}</van-col>
+          <van-col span="12">工单状态：{{item.orderStatus}}</van-col>
+          <van-col span="12">维修费用（元）：{{item.repairCost}}</van-col>
+          <van-col span="24">故障描述：{{item.faultDesc}}</van-col>
+          <van-col span="24">解决方案描述：{{item.solutionDesc}}</van-col>
         </van-row>
       </view>
     </view>

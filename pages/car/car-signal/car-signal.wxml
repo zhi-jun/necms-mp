@@ -22,13 +22,11 @@
         <van-row>
           <van-col span="12">所属分组：{{item.belongGroup}}</van-col>
           <van-col span="12">车辆类型：{{item.vehicleType}}</van-col>
+          <van-col span="24">发生时间：{{item.updateTime}}</van-col>
+          <van-col span="24">
+            消息内容： {{ (item.msgType == '应答'?item.replyContent : item.sendContent) }}
+          </van-col>
         </van-row>
-        <van-row>
-          <van-col span="12">车牌号：{{item.licenseNo}}</van-col>
-          <van-col span="12">发生时间：{{item.msgTime}}</van-col>
-        </van-row>
-        <text>消息内容：</text>
-        <text>{{ (item.msgType == '应答'?item.replyContent : item.sendContent) }}</text>
       </view>
     </view>
     <mp-loading type="circle" wx:if="{{isLoading}}"></mp-loading>
