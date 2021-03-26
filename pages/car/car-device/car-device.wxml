@@ -8,27 +8,27 @@
       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">VIN：</van-col>
-          <van-col span="14">LBYKF00ES0112</van-col>
+          <van-col span="14">{{vehData.veh}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">GPS时间：</van-col>
-          <van-col span="14">2021-03-21 11:00:00</van-col>
+          <van-col span="14">{{vehDescData.gtime}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">位置：</van-col>
-          <van-col span="14">安徽省合肥市潜山路280号 新华国际广场</van-col>
+          <van-col span="14">{{vehDescData.addr}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">定位状态：</van-col>
-          <van-col span="14">有效定位</van-col>
+          <van-col span="14">{{vehDescData.gpsStatus}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">经度：</van-col>
-          <van-col span="14">117.101235</van-col>
+          <van-col span="14">{{vehData.plon}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">维度：</van-col>
-          <van-col span="14">31.840116</van-col>
+          <van-col span="14">{{vehData.plat}}</van-col>
         </van-row>
       </view>
       <!-- 整车数据 -->
@@ -38,47 +38,47 @@
       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">车辆状态：</van-col>
-          <van-col span="14">熄火</van-col>
+          <van-col span="14">{{vehDescData.ccarSts}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">充电状态：</van-col>
-          <van-col span="14">未充电</van-col>
+          <van-col span="14">{{vehDescData.cchargeSts}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">允许模式：</van-col>
-          <van-col span="14">正在行驶</van-col>
+          <van-col span="14">{{vehDescData.cworkSts}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">车速(KM/H)：</van-col>
-          <van-col span="14">72 km/h</van-col>
+          <van-col span="14">{{vehData.cspeed}} km/h</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">里程(KM)：</van-col>
-          <van-col span="14">39100 km</van-col>
+          <van-col span="14">{{vehData.cdis}} km</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">总电压(V)：</van-col>
-          <van-col span="14">220 V</van-col>
+          <van-col span="14">{{vehData.celeVol}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">总电流(A)：</van-col>
-          <van-col span="14">12 A</van-col>
+          <van-col span="14">{{vehData.celeCur}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">SOC(%)：</van-col>
-          <van-col span="14">79%</van-col>
+          <van-col span="14">{{vehData.csoc}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">DC/DC状态：</van-col>
-          <van-col span="14">-</van-col>
+          <van-col span="14">{{vehData.cdcSts}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">档位：</van-col>
-          <van-col span="14">空档</van-col>
+          <van-col span="14">{{vehDescData.cgear}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">绝缘电阻：</van-col>
-          <van-col span="14">0 kΩ</van-col>
+          <van-col span="14">{{vehData.celeRes}} kΩ</van-col>
         </van-row>
       </view>
       <!-- 极值数据 -->
@@ -88,51 +88,51 @@
       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">最高电压电池子系统号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMxVN}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最高电压电池单体代号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMxVC}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">电池单体电压最高值(V)：</van-col>
-          <van-col span="14">220 V</van-col>
+          <van-col span="14">{{vehData.exMxVV}} V</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最低电压电池子系统号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMiVN}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最低电压电池单体代号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMiVC}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">电池单体电压最低值(V)：</van-col>
-          <van-col span="14">220 V</van-col>
+          <van-col span="14">{{vehData.exMiVV}} V</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最高温度子系统号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMxTN}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最高温度探针单体代号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMxTC}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最高温度值(℃)：</van-col>
-          <van-col span="14">70 ℃</van-col>
+          <van-col span="14">{{vehData.exMxTV}} ℃</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最低温度子系统号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="14">{{vehData.exMiTN}}</van-col>
         </van-row>
         <van-row>
-          <van-col span="9" class="card-label">最高温度探针单体代号：</van-col>
-          <van-col span="14">0000</van-col>
+          <van-col span="9" class="card-label">最低温度探针单体代号：</van-col>
+          <van-col span="14">{{vehData.exMiTC}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">最低温度值(℃)：</van-col>
-          <van-col span="14">30 ℃</van-col>
+          <van-col span="14">{{vehData.exMiTV}} ℃</van-col>
         </van-row>
       </view>
       <!-- 报警数据 -->
@@ -142,11 +142,11 @@
       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">故障登记：</van-col>
-          <van-col span="14">一级</van-col>
+          <van-col span="14">{{vehData.whlv}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">报警状态：</van-col>
-          <van-col span="14">无报警</van-col>
+          <van-col span="14">{{vehDescData.ftStatus}}</van-col>
         </van-row>
       </view>
     </van-tab>
@@ -157,27 +157,27 @@
       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">VIN：</van-col>
-          <van-col span="14">LBYKF00ES0112</van-col>
+          <van-col span="14">{{vehData.veh}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">GPS时间：</van-col>
-          <van-col span="14">2021-03-21 11:00:00</van-col>
+          <van-col span="14">{{vehDescData.gtime}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">位置：</van-col>
-          <van-col span="14">安徽省合肥市潜山路280号 新华国际广场</van-col>
+          <van-col span="14">{{vehDescData.addr}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">定位状态：</van-col>
-          <van-col span="14">有效定位</van-col>
+          <van-col span="14">{{vehDescData.gpsStatus}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">经度：</van-col>
-          <van-col span="14">117.101235</van-col>
+          <van-col span="14">{{vehData.plon}}</van-col>
         </van-row>
         <van-row>
           <van-col span="9" class="card-label">维度：</van-col>
-          <van-col span="14">31.840116</van-col>
+          <van-col span="14">{{vehData.plat}}</van-col>
         </van-row>
       </view>
     </van-tab>
