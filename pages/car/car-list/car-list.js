@@ -52,7 +52,7 @@ Page({
     this.navigate(e.currentTarget.dataset.vin, '/pages/car/car-device/car-device');
   },
   onNavigateMap(e) {
-    this.navigate(e.currentTarget.dataset.vin, '/pages/map/map-track/map-track');
+    this.navigate(e.currentTarget.dataset.vin, '/pages/map/map-index/map-index');
   },
   onNavigateSignal(e) {
     this.navigate(e.currentTarget.dataset.vin, '/pages/car/car-signal/car-signal');

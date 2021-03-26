@@ -39,6 +39,7 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-toast": "@vant/weapp/toast/index",
+    "van-dialog": "@vant/weapp/dialog/index",
 
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-toptips": "weui-miniprogram/toptips/toptips",
