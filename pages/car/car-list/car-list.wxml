@@ -32,16 +32,16 @@
         <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal">
           通信纪录
         </van-button> -->
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateMap" data-id='{{ item.id }}'>
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateMap" data-vin='{{ item.vin }}'>
           查看定位
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice" data-id='{{ item.id }}'>
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateDevice" data-vin='{{ item.vin }}'>
           设备数据
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair" data-id='{{ item.id }}'>
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair" data-vin='{{ item.vin }}'>
           维修工单
         </van-button>
-        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal" data-id='{{ item.id }}'>
+        <van-button type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal" data-vin='{{ item.vin }}'>
           通信纪录
         </van-button>
       </view>
