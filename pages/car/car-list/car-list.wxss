@@ -1,7 +1,3 @@
-.container{
-  padding-bottom: 60rpx;
-}
-
 .search-warp .search{
   height: 110rpx;
   position: fixed;
@@ -16,4 +12,5 @@
 
 .container-wrapper{
   padding-top: 110rpx;
+  padding-bottom: 60rpx;
 }

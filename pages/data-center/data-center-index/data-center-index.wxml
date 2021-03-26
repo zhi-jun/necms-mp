@@ -1,3 +1,4 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 <view class="container-wrapper-db">
   <!-- 行程时长统计 -->
   <view class="i-card-link" bindtap="jump2Detail">
@@ -10,15 +11,15 @@
     </view>
     <view class="i-card-link-grid">
       <view class="i-card-link-grid-item van-hairline--right ">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">车辆总数</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.runDurationStr }}</text>
         <text class="desc">行程总时长(h)</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.dayRunDurationStr }}</text>
         <text class="desc">今日总时长(h)</text>
       </view>
     </view>
@@ -34,15 +35,15 @@
     </view>
     <view class="i-card-link-grid">
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">车辆总数</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">行程总里程(km)</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">今日总里程(km)</text>
       </view>
     </view>

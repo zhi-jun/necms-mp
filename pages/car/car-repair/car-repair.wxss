@@ -17,3 +17,7 @@
 .container-wrapper{
   padding-top: 110rpx;
 }
+
+.i-card-content {
+  font-size: 22rpx;
+}
