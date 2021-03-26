@@ -1,34 +1,25 @@
 <view class="container">
-  <view style="height: 110rpx">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <view class="search-warp">
     <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
-      <view slot="action" bind:tap="onSearch">搜索</view>
+      <view slot="action" bind:tap="onSearch" class="action-btn">搜索</view>
     </van-search>
   </view>
+  <!-- 搜索结果 -->
   <view class="container-wrapper">
-    <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
-    <view wx:for="{{ result }}" wx:key="index" class="i-card">
+    <van-empty wx:if="{{result.length == 0 && !isLoading}}" image="search" description="暂无数据" />
+    <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail" data-vin='{{ item.vin }}'>
       <view class="i-card-title">
-        <image src="/images/pages/tool.svg"></image>
-        <text>工单号 :  {{ item.no }}</text>
+        <image src="/images/pages/auto.svg"></image>
+        <text>车架号 :  {{ item.vin }}</text>
       </view>
       <view class="i-card-content">
-        <text>所属机构：企业+下级</text>
+        <text>所属组织机构：{{ item.companyName + ' '+ item.groupCodeName }}</text>
         <van-row>
-          <van-col span="12">维修人员：李四</van-col>
-          <van-col span="12">维修人员电话：13312341234</van-col>
-        </van-row>
-        <van-row>
-          <van-col span="12">派单时间：</van-col>
-          <van-col span="12">工单关闭时间：</van-col>
-        </van-row>
-        <van-row>
-          <van-col span="24">故障描述：</van-col>
-        </van-row>
-        <van-row>
-          <van-col span="24">解决方案描述：</van-col>
+          <van-col span="12">车牌号：{{item.licenseNo}}</van-col>
         </van-row>
       </view>
     </view>
+    <mp-loading type="circle" wx:if="{{isLoading}}"></mp-loading>
   </view>
-  <mp-loading type="circle"></mp-loading>
 </view>

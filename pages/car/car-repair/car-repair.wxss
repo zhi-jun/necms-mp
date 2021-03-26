@@ -1,0 +1,19 @@
+.container{
+  padding-bottom: 60rpx;
+}
+
+.search-warp .search{
+  height: 110rpx;
+  position: fixed;
+  z-index: 10000;
+}
+
+.action-btn{
+  float: right;
+  margin-right: 20rpx;
+  color: #10aeff;
+}
+
+.container-wrapper{
+  padding-top: 110rpx;
+}

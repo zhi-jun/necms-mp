@@ -1,37 +1,45 @@
+const { request } = require('../../../utils/ajax')
+
 Page({
   data: {
     value: '',
-    result: [
-      { no: 'WX000000001', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'WX000000002', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' }
-    ]
+    pageNum: 1,
+    pageSize: 6,
+    size: 0,
+    result: [],
+    isLoading: false
   },
-
-  onConfirm() {
-    this.selectComponent('#item').toggle();
+  onLoad() {
+    this.onSearch()
   },
-
-  onSwitch1Change({ detail }) {
-    this.setData({ switch1: detail });
-  },
-
-  onSwitch2Change({ detail }) {
-    this.setData({ switch2: detail });
-  },
-
   onChange(e) {
-    this.setData({
-      value: e.detail,
-    });
+    this.setData({ value: e.detail });
   },
   onSearch() {
-    if (!this.data.value)
-      return
-    console.log('搜索' + this.data.value);
+    this.setData({ isLoading: true });
+    if (this.data.pageNum == 1)
+      this.data.result = []
+    request({
+      url: '/applets/vehicle_info/findRepairOrdersByPage',
+      data: { orderNo: this.data.value, vin: wx.getStorageSync("vin"), currenPage: this.data.pageNum, pageSize: this.data.pageSize },
+      method: 'get'
+    },
+      res => {
+        this.setData({ isLoading: false });
+        if (res.code != "00000000") {
+          this.setData({ error: res.message })
+          return
+        }
+        this.setData({
+          result: this.data.result.concat(res.data.data),
+          size: res.data.recordsFiltered
+        });
+      })
+  },
+  onReachBottom() {
+    if (this.data.pageNum * this.data.pageSize < this.data.size) {
+      this.setData({ pageNum: this.data.pageNum + 1 });
+      this.onSearch()
+    }
   }
 })

@@ -1,35 +1,36 @@
 <view class="container">
-  <view style="height: 110rpx">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <!-- <view class="search-warp">
     <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
-      <view slot="action" bind:tap="onSearch">搜索</view>
+      <view slot="action" bind:tap="onSearch" class="action-btn">搜索</view>
     </van-search>
-  </view>
+  </view> -->
+  <!-- 搜索结果 -->
   <view class="container-wrapper">
-    <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
-    <view wx:for="{{ result }}" wx:key="index" class="i-card">
-      <view class="i-card-title" wx:if="{{item.state == 1}}">
+    <van-empty wx:if="{{result.length == 0 && !isLoading}}" image="search" description="暂无数据" />
+    <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail" data-vin='{{ item.vin }}'>
+      <view class="i-card-title" wx:if="{{item.msgStatus == '成功'}}">
         <image src="/images/pages/signal-success.svg"></image>
-        <text style="color:#07C160">应答 :  成功</text>
+        <text style="color:#07C160">{{item.msgType}} :  成功</text>
       </view>
       <view class="i-card-title" wx:else>
         <image src="/images/pages/signal-error.svg"></image>
-        <text style="color:#FA5151">应答 :  失败</text>
+        <text style="color:#FA5151">{{item.msgType}} :  失败</text>
       </view>
       <view class="i-card-content">
-        <text>所属机构：企业+下级</text>
+        <text>所属组织机构：{{ item.companyName + ' '+ item.groupCodeName }}</text>
         <van-row>
-          <van-col span="12">所属分组：XX</van-col>
-          <van-col span="12">车辆类型：AA</van-col>
+          <van-col span="12">所属分组：{{item.belongGroup}}</van-col>
+          <van-col span="12">车辆类型：{{item.vehicleType}}</van-col>
         </van-row>
         <van-row>
-          <van-col span="12">车牌号：</van-col>
-          <van-col span="12">发生时间：</van-col>
+          <van-col span="12">车牌号：{{item.licenseNo}}</van-col>
+          <van-col span="12">发生时间：{{item.msgTime}}</van-col>
         </van-row>
-        <van-row>
-          <van-col span="24">消息内容：</van-col>
-        </van-row>
+        <text>消息内容：</text>
+        <text>{{ (item.msgType == '应答'?item.replyContent : item.sendContent) }}</text>
       </view>
     </view>
+    <mp-loading type="circle" wx:if="{{isLoading}}"></mp-loading>
   </view>
-  <mp-loading type="circle"></mp-loading>
 </view>
