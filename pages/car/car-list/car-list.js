@@ -13,9 +13,7 @@ Page({
     this.onSearch()
   },
   onChange(e) {
-    this.setData({
-      value: e.detail,
-    });
+    this.setData({ value: e.detail, pageNum: 1 });
   },
   onSearch() {
     this.setData({ isLoading: true });
@@ -66,9 +64,7 @@ Page({
   noop() { },
   onReachBottom() {
     if (this.data.pageNum * this.data.pageSize < this.data.size) {
-      this.setData({
-        pageNum: this.data.pageNum + 1,
-      });
+      this.setData({ pageNum: this.data.pageNum + 1 });
       this.onSearch()
     }
   }
