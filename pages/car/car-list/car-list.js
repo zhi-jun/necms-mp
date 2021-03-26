@@ -42,7 +42,10 @@ Page({
     this.navigate('', '/pages/car/car-add/car-add');
   },
   onNavigateDetail(e) {
-    this.navigate(e.currentTarget.dataset.vin, '/pages/car/car-detail/car-detail');
+    const data=  this.data.result[e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: '/pages/car/car-detail/car-detail?current='+JSON.stringify(data)
+    })
   },
   onNavigateRepair(e) {
     this.navigate(e.currentTarget.dataset.vin, '/pages/car/car-repair/car-repair');
