@@ -4,6 +4,6 @@
     "@miniprogram-component-plus/row": "^1.0.0",
     "@vant/weapp": "^1.6.8",
     "miniprogram-computed": "^4.0.3",
-    "weui-miniprogram": "^1.0.7"
+    "weui-miniprogram": "^1.0.6"
   }
 }

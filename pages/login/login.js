@@ -1,48 +1,39 @@
+const { request } = require('../../utils/ajax')
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    formData: {},
-    rules: [{
-      name: 'username',
-      rules: { required: true, message: '用户名必填' },
-    }, {
-      name: 'password',
-      rules: { required: true, message: '密码必填' },
-    }]
+    formData: { userName: '', userPassword: '' }
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+  },
+  formInputChange(e) {
+    const { field } = e.currentTarget.dataset
+    this.setData({
+      [`formData.${field}`]: e.detail.value
+    })
   },
   submitForm() {
-    wx.showToast({ title: '登录成功' })
-    let userInfo = wx.setStorageSync("userInfo", '1')
+    if (!this.data.formData.userName) {
+      this.setData({ error: '用户名必填' })
+      return
+    }
 
-    setTimeout(() => {
-      wx.switchTab({ url: '/pages/home/home' });
-    }, 500)
+    if (!this.data.formData.userPassword) {
+      this.setData({ error: '密码必填' })
+      return
+    }
 
-
-    // this.selectComponent('#form').validate((valid, errors) => {
-    //   if (!valid) {
-    //     const firstError = Object.keys(errors)
-    //     if (firstError.length) {
-    //       this.setData({
-    //         error: errors[firstError[0]].message
-    //       })
-
-    //     }
-    //   } else {
-    //     wx.showToast({
-    //       title: '校验通过'
-    //     })
-    //   }
-    // })
+    request({
+      url: '/xxx',
+      data: this.data.formData,
+      method: 'POST'
+    },
+      res => {
+        wx.showToast({ title: '登录成功' })
+        wx.setStorageSync("token", res.tokenId)
+        setTimeout(() => {
+          wx.switchTab({ url: '/pages/home/home' });
+        }, 300)
+      })
   }
 })

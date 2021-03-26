@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "车辆信息",
-  "usingComponents": {}
+  "usingComponents": {
+    "select-tree": "../components/select-tree/select-tree"
+  }
 }

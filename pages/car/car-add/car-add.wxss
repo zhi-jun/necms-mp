@@ -14,3 +14,7 @@
   width: 220rpx !important;
   max-width: 220rpx !important;
 }
+
+.weui-cell__hd_in-select-after{
+  margin-left: 64rpx;
+}

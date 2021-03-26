@@ -1,50 +1,74 @@
 <view class="page">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <mp-form-page>
-    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+    <mp-form id="form" models="{{formData}}">
       <mp-cells>
-        <mp-cell has-header="{{false}}" ext-class="weui-cell_select">
-          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
-            <view class="weui-select">所属组织机构</view>
-          </picker>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">所属组织机构</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindtap="findSysGroupByTree"></picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">所属分组</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindbelongGroupChange" value="{{formData.belongGroup}}" range="{{belongGroups}}">
+              <view class="weui-select weui-select_in-select-after">
+                {{belongGroups[formData.belongGroup]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">车辆类型</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindvehicleTypeChange" value="{{formData.vehicleType}}" range="{{vehicleTypes}}">
+              <view class="weui-select weui-select_in-select-after">
+                {{vehicleTypes[formData.vehicleType]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <mp-cell prop="vin" title="车架号" ext-class="">
+          <input bindinput="formInputChange" data-field="vin" class="weui-input" placeholder="请输入车架号" />
         </mp-cell>
-        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
-          <view slot="title" class="weui-label">所属分组</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
-            <view class="weui-select">{{accounts[countryIndex]}}</view>
-          </picker>
+        <mp-cell prop="licenseNo" title="车牌号" ext-class="">
+          <input bindinput="formInputChange" data-field="licenseNo" class="weui-input" placeholder="请输入车牌号" />
         </mp-cell>
-        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
-          <view slot="title" class="weui-label">车辆类型</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
-            <view class="weui-select">{{accounts[countryIndex]}}</view>
-          </picker>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">使用用途</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="binduseTypeChange" value="{{formData.useType}}" range="{{useTypes}}">
+              <view class="weui-select weui-select_in-select-after">
+                {{useTypes[formData.useType]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <mp-cell prop="name" title="车主姓名" ext-class="">
+          <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入车主姓名" />
         </mp-cell>
-        <mp-cell prop="qq" title="车架号" ext-class="">
-          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车架号" />
+        <mp-cell prop="mobileNo" title="车主手机号" ext-class="">
+          <input bindinput="formInputChange" data-field="mobileNo" class="weui-input" placeholder="请输入车主手机号" />
         </mp-cell>
-        <mp-cell prop="qq" title="车牌号" ext-class="">
-          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车牌号" />
-        </mp-cell>
-        <mp-cell ext-class="weui-cell_select weui-cell_select-after">
-          <view slot="title" class="weui-label">使用用途</view>
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{accounts}}">
-            <view class="weui-select">{{accounts[countryIndex]}}</view>
-          </picker>
-        </mp-cell>
-        <mp-cell prop="qq" title="车主姓名" ext-class="">
-          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车主姓名" />
-        </mp-cell>
-        <mp-cell prop="qq" title="车主手机号" ext-class="">
-          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入车主手机号" />
-        </mp-cell>
-        <mp-cell prop="qq" title="经销商名称" ext-class="">
-          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入经销商名称" />
+        <mp-cell prop="spName" title="经销商名称" ext-class="">
+          <input bindinput="formInputChange" data-field="spName" class="weui-input" placeholder="请输入经销商名称" />
         </mp-cell>
       </mp-cells>
     </mp-form>
     <view slot="button">
       <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+    <view wx-if="{{showTree}}">
+      <select-tree model='{{ treeModel }}' props="{{treeProps}}" bind:tapitem='onTapTreeItem'></select-tree>
     </view>
   </mp-form-page>
 </view>

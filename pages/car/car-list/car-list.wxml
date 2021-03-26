@@ -2,6 +2,7 @@
   <view style="height: 110rpx">
     <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onSearch">搜索</view>
+      <view slot="action" bind:tap="onNavigateAdd">添加车辆</view>
     </van-search>
   </view>
   <!-- 搜索结果 -->
@@ -10,16 +11,16 @@
     <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail">
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
-        <text>车架号 :  {{ item.no }}</text>
+        <text>车架号 :  {{ item.vin }}</text>
       </view>
       <view class="i-card-content">
-        <text>所属机构：企业+下级</text>
+        <text>所属机构：{{ item.groupCodeName }}</text>
         <van-row>
-          <van-col span="12">所属分组：</van-col>
-           <van-col span="12">车辆类型：{{ item.carType }}</van-col>
+          <van-col span="12">所属分组：{{ item.belongGroupName }}</van-col>
+          <van-col span="12">车辆类型：{{ item.vehicleTypeName }}</van-col>
         </van-row>
         <van-row>
-          <van-col span="12">车牌号：{{item.cardNo}}</van-col>
+          <van-col span="12">车牌号：{{item.licenseNo}}</van-col>
           <van-col span="12">总行驶时长：</van-col>
         </van-row>
       </view>
@@ -32,6 +33,9 @@
         </van-button>
         <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateRepair">
           维修工单
+        </van-button>
+        <van-button icon="setting-o" type="primary" plain size="small" class="btn" bind:tap="onNavigateSignal">
+          通信纪录
         </van-button>
       </view>
     </view>

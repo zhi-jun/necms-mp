@@ -15,11 +15,16 @@ const request = (options, cb) => {
         'token': wx.getStorageSync('token')
       },
       success(res) {
-        if (res.statusCode === 401)
+        if (res.statusCode === 401) {
           wx.redirectTo({ url: '/pages/login/login' });
-        let dataStr = JSON.stringify(options.data);
+          return
+        }
+        if (!res.data || res.data.code != "00000000") {
+          wx.showToast({ icon: 'error', title: '请求失败' })
+          return
+        }
         if (cb)
-          cb(res)
+          cb(res.data.data)
       },
       fail(res) {
         wx.showToast({ icon: 'error', title: '请求失败' })
