@@ -86,7 +86,7 @@ Page({
   queryLocation() {
     request({
       url: '/applets/monitor/findNewMonitor',
-      data: { veh: 'LBVKY5103JSP0000' }, //wx.getStorageSync("vin")
+      data: { veh: 'LBVKY5103JSP0000' }, //
       method: 'get'
     },
       res => {
