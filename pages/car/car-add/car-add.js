@@ -20,10 +20,11 @@ Page({
     },
     treeModel: [],
     treeProps: {
-      value: 'PatrolClassID',
-      label: 'PatrolClassName',
+      value: 'nodeId',
+      label: 'nodeName',
       children: 'children'
     },
+    treeSelected: '',
     showTree: false
   },
   formInputChange(e) {
@@ -82,21 +83,21 @@ Page({
   },
   findSysGroupByTree() {
     let list = [{
-      "PatrolClassID": 20,
-      "PatrolClassName": "一级分类",
-      "ParentID": 0,
+      "nodeId": 20,
+      "nodeName": "一级分类",
+      "parentId": 0,
     }, {
-      "PatrolClassID": 21,
-      "PatrolClassName": "二级分类",
-      "ParentID": 20,
+      "nodeId": 21,
+      "nodeName": "二级分类",
+      "parentId": 20,
     }, {
-      "PatrolClassID": 22,
-      "PatrolClassName": "二级分类1",
-      "ParentID": 20,
+      "nodeId": 22,
+      "nodeName": "二级分类1",
+      "parentId": 20,
     }, {
-      "PatrolClassID": 23,
-      "PatrolClassName": "三级分类",
-      "ParentID": 21,
+      "nodeId": 23,
+      "nodeName": "三级分类",
+      "parentId": 21,
     }];
     // 删除 所有 children,以防止多次调用
     list.forEach(function (item) {
@@ -104,11 +105,11 @@ Page({
     });
     let map = {};
     list.forEach(function (item) {
-      map[item.PatrolClassID] = item;
+      map[item.nodeId] = item;
     });
     let treedata = [];
     list.forEach(function (item) {
-      let parent = map[item.ParentID];
+      let parent = map[item.parentId];
       if (parent) {
         (parent.children || (parent.children = [])).push(item);
       } else {
@@ -120,18 +121,16 @@ Page({
       res.first = true
     })
     this.setData({
-      tree: treedata
+      treeModel: treedata,
+      showTree: true
     })
   },
   onTapTreeItem: function (e) {
-    console.log('index接收到的itemid: ' + e.detail);
+    this.data.formData.groupCode = e.detail.nodeId
     this.setData({
-      showTree: false
+      showTree: false,
+      treeSelected: e.detail.nodeName,
+      formData: this.data.formData
     })
-
-    // this.data.formData.groupCode = e.detail.value
-    // this.setData({
-    //   formData: this.data.formData
-    // })
   },
 });

@@ -30,37 +30,34 @@ Component({
   },
 
   methods: {
-    toggle: function(e) {
+    toggle: function (e) {
       let item = this.data.model[e.currentTarget.dataset.father];
-      if (!item.hasOwnProperty(this.data.props.children)){
+      if (!item.hasOwnProperty(this.data.props.children)) {
         return;
       }
       item.open = !item.open;
       this.setData({
-        model:this.data.model
+        model: this.data.model
       })
     },
-    tapItem: function(e) {
-      var itemid = e.currentTarget.dataset.itemid;
-      this.triggerEvent('tapitem', {
-        itemid: itemid
-      }, {
+    tapItem: function (e) {
+      this.triggerEvent('tapitem', e.currentTarget.dataset.item, {
         bubbles: true,
         composed: true
       });
     },
-    closClass: function() {
+    closClass: function () {
       this.triggerEvent('closClass');
     }
   },
 
-  ready: function(e) {
-    if (this.data.model.length>0) {
-      this.data.model.forEach(item=>{
+  ready: function (e) {
+    if (this.data.model.length > 0) {
+      this.data.model.forEach(item => {
         item.open = this.data.open
       })
       this.setData({
-        model:this.data.model
+        model: this.data.model
       })
     }
   },

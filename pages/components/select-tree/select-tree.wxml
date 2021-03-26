@@ -2,13 +2,13 @@
 <scroll-view scroll-y class="{{model[0].first==true?'_wrapper':''}}">
   <view class="ul">
     <block wx:for="{{model}}" wx:key="{{item[props.value]}}">
-      <view class="li-item" catchtap="tapItem" data-itemid='{{ item[props.value] }}'>
+      <view class="li-item" catchtap="tapItem" data-item='{{ item }}'>
         <view>
           <text>{{item[props.label]}}</text>
-          <image src="/img/checked.png" class="menu-img" wx:if='{{ item[props.value]==value }}'></image>
+          <image src="/images/icons/checked.png" class="menu-img" wx:if='{{ item[props.value]==value }}'></image>
         </view>
         <view class="img-wrapper" catchtap="toggle" data-father="{{index}}">
-          <image src="/img/{{item.open?'shangla':'xiala'}}.png" class="menu-img" wx:if='{{ item.children }}'></image>
+          <image src="/images/icons/{{item.open?'shangla':'xiala'}}.png" class="menu-img" wx:if='{{ item.children }}'></image>
         </view>
       </view>
       <view style='padding-left: 50rpx;' hidden='{{ !item.open }}'>

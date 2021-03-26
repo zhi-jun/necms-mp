@@ -3,12 +3,12 @@
   <mp-form-page>
     <mp-form id="form" models="{{formData}}">
       <mp-cells>
-        <view class="weui-cell weui-cell_select">
+        <view class="weui-cell weui-cell_select" bindtap="findSysGroupByTree">
           <view class="weui-cell__hd weui-cell__hd_in-select-after">
             <view class="weui-label">所属组织机构</view>
           </view>
           <view class="weui-cell__bd">
-            <picker bindtap="findSysGroupByTree"></picker>
+            <view class="weui-select weui-select_in-select-after">{{ treeSelected }}</view>
           </view>
         </view>
         <view class="weui-cell weui-cell_select">
