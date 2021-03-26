@@ -1,7 +1,7 @@
-const baseUrl = "http://0.0.0.0"
+const baseUrl = "http://60.168.131.134:9001"
 
 // 封装request请求
-const request = (options, cb) => {
+const request = (options, cb, that) => {
   //url
   if (options.url.indexOf('http') != 0) {
     options.url = baseUrl + options.url;
@@ -12,19 +12,15 @@ const request = (options, cb) => {
     {
       ...options,
       header: {
-        'token': wx.getStorageSync('token')
+        'tokenId': wx.getStorageSync('token')
       },
       success(res) {
         if (res.statusCode === 401) {
           wx.redirectTo({ url: '/pages/login/login' });
           return
         }
-        if (!res.data || res.data.code != "00000000") {
-          wx.showToast({ icon: 'error', title: '请求失败' })
-          return
-        }
         if (cb)
-          cb(res.data.data)
+          cb(res.data)
       },
       fail(res) {
         wx.showToast({ icon: 'error', title: '请求失败' })

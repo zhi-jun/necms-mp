@@ -24,16 +24,20 @@ Page({
     }
 
     request({
-      url: '/xxx',
+      url: '/applets/sys_user/login',
       data: this.data.formData,
       method: 'POST'
     },
       res => {
+        if (res.code != "00000000") {
+          this.setData({ error: res.message })
+          return
+        }
         wx.showToast({ title: '登录成功' })
-        wx.setStorageSync("token", res.tokenId)
+        wx.setStorageSync("token", res.data.tokenId)
         setTimeout(() => {
           wx.switchTab({ url: '/pages/home/home' });
         }, 300)
-      })
+      }, this)
   }
 })

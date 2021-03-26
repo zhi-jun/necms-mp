@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/car/car-add/car-add",
     "pages/car/car-list/car-list",
 
     "pages/login/login",
+
+    
+    "pages/car/car-add/car-add",
     "pages/home/home",
     "pages/map/map-index/map-index",
     "pages/map/map-track/map-track",
@@ -38,6 +40,7 @@
     "van-calendar": "@vant/weapp/calendar/index",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
+    "van-toast": "@vant/weapp/toast/index",
 
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-toptips": "weui-miniprogram/toptips/toptips",
