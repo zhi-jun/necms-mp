@@ -4,12 +4,12 @@ Page({
   data: {
     value: '',
     pageNum: 0,
-    pageSize: 10,
+    pageSize: 6,
     size: 0,
     result: [],
     isLoading: false
   },
-  onLaunch() {
+  onLoad() {
     this.onSearch()
   },
   onConfirm() {
@@ -42,6 +42,10 @@ Page({
           this.setData({ error: res.message })
           return
         }
+        this.setData({
+          result: this.data.result.concat(res.data.data),
+          size: res.data.recordsFiltered
+        });
         console.log('************1111', res);
       })
   },
@@ -65,8 +69,11 @@ Page({
   },
   noop() { },
   onReachBottom() {
-    this.setData({
-      pageNum: this.data.pageNum + 1,
-    });
+    if (this.data.pageNum * this.data.pageSize < this.data.size) {
+      this.setData({
+        pageNum: this.data.pageNum + 1,
+      });
+      this.onSearch()
+    }
   }
 })

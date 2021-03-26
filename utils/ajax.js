@@ -12,7 +12,7 @@ const request = (options, cb, that) => {
     {
       ...options,
       header: {
-        'tokenId': wx.getStorageSync('token')
+        'tokenId': wx.getStorageSync('tokenId')
       },
       success(res) {
         if (res.statusCode === 401) {
