@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/data-center/data-center-list/data-center-list",
     "pages/data-center/data-center-index/data-center-index",
 
     "pages/car/car-list/car-list",
@@ -12,7 +13,6 @@
     "pages/map/map-track/map-track",
     "pages/car/car-device/car-device",
     "pages/car/car-detail/car-detail",
-    "pages/data-center/data-center-list/data-center-list",
     "pages/driver/driver-index/driver-index",
     "pages/task-set/task-set-index/task-set-index"
   ],

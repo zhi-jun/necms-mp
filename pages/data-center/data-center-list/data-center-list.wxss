@@ -1,3 +1,21 @@
 .van-cell__value{
   min-width: 60%;
 }
+
+.search-warp .calendar{
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.search-warp .search{
+  top: 88rpx;
+  height: 110rpx; 
+  position: fixed;
+  z-index: 100;
+}
+
+.container-wrapper{
+  padding-top: 200rpx;
+  padding-bottom: 60rpx;
+}

@@ -5,7 +5,7 @@
 .search-warp .search{
   height: 110rpx;
   position: fixed;
-  z-index: 10000;
+  z-index: 100;
 }
 
 .action-btn{

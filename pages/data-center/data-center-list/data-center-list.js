@@ -1,57 +1,69 @@
+const { request } = require('../../../utils/ajax')
+const { formatDate } = require('../../../utils/util')
 
 Page({
   data: {
+    type: wx.getStorageSync("dataCenterType"),
     showCalendar: false,
     minDate: new Date(2021, 0, 1).getTime(),
     maxDate: new Date().getTime(),
-    dateRange1: [new Date(new Date() - 7 * 24 * 3600 * 1000).getTime(), new Date().getTime()],
-    value1: 0,
-    result: [
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' },
-      { no: 'LSVG026R9F2086645', org: '企业+下级', group: '所属分组：', carType: '小轿车', cardNo: '皖A12345', totalDriverTime: '总行驶时长', intervalDriverTime: '区间行驶时', todayDriverTime: '今日行驶时长' }
-    ]
+    dateRange: [new Date(new Date() - 7 * 24 * 3600 * 1000).getTime(), new Date().getTime()],
+    value: '',
+    pageNum: 1,
+    pageSize: 6,
+    size: 0,
+    result: [],
+    isLoading: false
   },
   onLoad() {
-    this.setData(this.data);
+    this.onSearch()
   },
-
-  onConfirm() {
-    this.selectComponent('#item').toggle();
-  },
-
-  onSwitch1Change({ detail }) {
-    this.setData({ switch1: detail });
-  },
-
-  onSwitch2Change({ detail }) {
-    this.setData({ switch2: detail });
-  },
-
   onChange(e) {
-    this.setData({
-      value: e.detail,
-    });
-  },
-  onSearch() {
-    if (!this.data.value)
-      return
-    console.log('搜索' + this.data.value);
+    this.setData({ value: e.detail, pageNum: 1 });
   },
   onCalendarShow() {
     this.setData({ showCalendar: true });
   },
   onConfirm(e) {
     this.setData({
-      dateRange1: e.detail.map(date => new Date(date.valueOf()).getTime()),
+      dateRange: e.detail.map(date => new Date(date.valueOf()).getTime()),
       showCalendar: false
     });
   },
   onClosed() {
     this.setData({ showCalendar: false });
+  },
+  onSearch() {
+    this.setData({ isLoading: true });
+    if (this.data.pageNum == 1)
+      this.data.result = []
+    request({
+      url: '/applets/report_day_run_duration/findReportDayMileagesByPage',
+      data: {
+        vehNo: this.data.value,
+        currenPage: this.data.pageNum,
+        pageSize: this.data.pageSize,
+        startTime: formatDate(this.data.dateRange[0]),
+        endTime: formatDate(this.data.dateRange[1])
+      },
+      method: 'get'
+    },
+      res => {
+        this.setData({ isLoading: false });
+        if (res.code != "00000000") {
+          this.setData({ error: res.message })
+          return
+        }
+        this.setData({
+          result: this.data.result.concat(res.data.data),
+          size: res.data.recordsFiltered
+        });
+      })
+  },
+  onReachBottom() {
+    if (this.data.pageNum * this.data.pageSize < this.data.size) {
+      this.setData({ pageNum: this.data.pageNum + 1 });
+      this.onSearch()
+    }
   }
 })

@@ -40,9 +40,9 @@ Page({
     this.navigate('', '/pages/car/car-add/car-add');
   },
   onNavigateDetail(e) {
-    const data=  this.data.result[e.currentTarget.dataset.index]
+    const data = this.data.result[e.currentTarget.dataset.index]
     wx.navigateTo({
-      url: '/pages/car/car-detail/car-detail?current='+JSON.stringify(data)
+      url: '/pages/car/car-detail/car-detail?current=' + JSON.stringify(data)
     })
   },
   onNavigateRepair(e) {

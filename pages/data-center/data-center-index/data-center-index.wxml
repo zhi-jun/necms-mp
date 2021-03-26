@@ -1,7 +1,7 @@
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 <view class="container-wrapper-db">
   <!-- 行程时长统计 -->
-  <view class="i-card-link" bindtap="jump2Detail">
+  <view class="i-card-link" bindtap="jump2Detail" data-type="duration">
     <view class="i-card-link-title">
       <view class="i-card-link-title-head">
         <van-icon name="chart-trending-o" class="header-icon" />
@@ -24,32 +24,8 @@
       </view>
     </view>
   </view>
-  <!-- 行程里程统计 -->
-  <view class="i-card-link" bindtap="jump2Detail">
-    <view class="i-card-link-title">
-      <view class="i-card-link-title-head">
-        <van-icon name="chart-trending-o" class="header-icon" />
-        <text>行程里程统计</text>
-      </view>
-      <van-icon name="arrow" />
-    </view>
-    <view class="i-card-link-grid">
-      <view class="i-card-link-grid-item">
-        <text class="num">{{ dataCenterVo.totalCar }}</text>
-        <text class="desc">车辆总数</text>
-      </view>
-      <view class="i-card-link-grid-item">
-        <text class="num">{{ dataCenterVo.totalCar }}</text>
-        <text class="desc">行程总里程(km)</text>
-      </view>
-      <view class="i-card-link-grid-item">
-        <text class="num">{{ dataCenterVo.totalCar }}</text>
-        <text class="desc">今日总里程(km)</text>
-      </view>
-    </view>
-  </view>
   <!-- 充电统计 -->
-  <view class="i-card-link" bindtap="jump2Detail">
+  <view class="i-card-link" bindtap="jump2Detail" data-type="charging">
     <view class="i-card-link-title">
       <view class="i-card-link-title-head">
         <van-icon name="chart-trending-o" class="header-icon" />
@@ -59,43 +35,43 @@
     </view>
     <view class="i-card-link-grid">
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">车辆总数</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
-        <text class="desc">充电次数</text>
+        <text class="num">{{ dataCenterVo.chargingCount }}</text>
+        <text class="desc">充电总次数</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.chargingDurationStr }}</text>
         <text class="desc">充电总时长(h)</text>
       </view>
     </view>
   </view>
-  <!-- 节碳统计 -->
-  <view class="i-card-link" bindtap="jump2Detail">
+  <!-- 减排统计 -->
+  <view class="i-card-link" bindtap="jump2Detail" data-type="carbon">
     <view class="i-card-link-title">
       <view class="i-card-link-title-head">
         <van-icon name="chart-trending-o" class="header-icon" />
-        <text>节碳统计</text>
+        <text>减排统计</text>
       </view>
       <van-icon name="arrow" />
     </view>
     <view class="i-card-link-grid">
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCar }}</text>
         <text class="desc">车辆总数</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
-        <text class="desc">行驶次数(km)</text>
+        <text class="num">{{ dataCenterVo.dayMileage }}</text>
+        <text class="desc">今日总里程(km)</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
-        <text class="desc">行驶里程(kh)</text>
+        <text class="num">{{ dataCenterVo.totalDistance }}</text>
+        <text class="desc">行驶总里程(kh)</text>
       </view>
       <view class="i-card-link-grid-item">
-        <text class="num">120</text>
+        <text class="num">{{ dataCenterVo.totalCarbon }}</text>
         <text class="desc">减排量(吨)</text>
       </view>
     </view>
