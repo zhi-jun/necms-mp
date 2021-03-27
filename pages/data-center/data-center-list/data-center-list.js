@@ -37,8 +37,23 @@ Page({
     this.setData({ isLoading: true });
     if (this.data.pageNum == 1)
       this.data.result = []
+    let url = ''
+    switch (this.data.type) {
+      case 'duration':
+        url = '/applets/report_day_run_duration/findReportDayRunDurationsByPage'//行驶时长
+        break;
+      case 'charging':
+        url = '/applets/report_day_run_duration/findChargingInfoDetailsByPage'//充电
+        break;
+      case 'carbon':
+        url = '/applets/report_day_run_duration/findReportDayMileagesByPage'//减排
+        break;
+      default:
+        break
+    }
+
     request({
-      url: '/applets/report_day_run_duration/findReportDayMileagesByPage',
+      url: url,
       data: {
         vehNo: this.data.value,
         currenPage: this.data.pageNum,
@@ -50,7 +65,7 @@ Page({
     },
       res => {
         this.setData({ isLoading: false });
-        if (res.code != "00000000") {
+        if (!res || res.code != "00000000") {
           this.setData({ error: res.message })
           return
         }
