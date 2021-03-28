@@ -29,6 +29,8 @@ Page({
       method: 'POST'
     },
       res => {
+        if (!res)
+          return
         if (res.code != "00000000") {
           this.setData({ error: res.message })
           return

@@ -26,7 +26,7 @@ Page({
     },
       res => {
         this.setData({ isLoading: false });
-        if (res.code != "00000000") {
+        if (!res || res.code != "00000000") {
           this.setData({ error: res.message })
           return
         }

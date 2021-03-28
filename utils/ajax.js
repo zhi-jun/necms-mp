@@ -24,6 +24,8 @@ const request = (options, cb, that) => {
       },
       fail(res) {
         wx.showToast({ icon: 'error', title: '请求失败' })
+        if (cb)
+          cb(res)
       }
     }
   );

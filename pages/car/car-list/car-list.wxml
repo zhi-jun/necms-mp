@@ -1,7 +1,7 @@
 <view class="container">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <view class="search-warp">
-    <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
+    <van-search value="{{ value }}" use-action-slot placeholder="请输入车架号" class="search" bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onNavigateAdd" class="action-btn">添加车辆</view>
       <view slot="action" bind:tap="onSearch" class="action-btn">搜索</view>
     </van-search>

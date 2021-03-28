@@ -2,7 +2,7 @@
 <view class="container">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <view class="search-warp">
-    <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
+    <van-search value="{{ value }}" use-action-slot placeholder="请输入工单号" class="search" bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onSearch" class="action-btn">搜索</view>
     </van-search>
   </view>
@@ -11,7 +11,7 @@
     <van-empty wx:if="{{result.length == 0 && !isLoading}}" image="search" description="暂无数据" />
     <view wx:for="{{ result }}" wx:key="index" class="i-card" bind:tap="onNavigateDetail" data-vin='{{ item.vin }}'>
       <view class="i-card-title">
-        <image src="/images/pages/auto.svg"></image>
+        <image src="/images/pages/tool.svg"></image>
         <text>工单号 :  {{ item.orderNo }}</text>
       </view>
       <view class="i-card-content">

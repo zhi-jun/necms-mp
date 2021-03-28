@@ -1,36 +1,61 @@
 <wxs src="./data-center-list.wxs" module="computed"></wxs>
 <view class="container">
-  <van-cell is-link title="申请日期" bind:click="onCalendarShow" style="width:100%;" value="{{ computed.formatRange(dateRange1) }}" />
-  <view style="height: 110rpx">
-    <van-search value="{{ value }}" use-action-slot placeholder="请输入搜索关键词" class="search" bind:change="onChange" bind:search="onSearch">
-      <view slot="action" bind:tap="onSearch">搜索</view>
-    </van-search>
+  <view class="search-warp">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <van-cell is-link title="申请日期" bind:click="onCalendarShow" class="calendar" value="{{ computed.formatRange(dateRange) }}" />
+    <view>
+      <van-search value="{{ value }}" use-action-slot placeholder="请输入车架号" class="search" bind:change="onChange" bind:search="onSearch">
+        <view slot="action" bind:tap="onSearch">搜索</view>
+      </van-search>
+    </view>
   </view>
   <!-- 搜索结果 -->
   <view class="container-wrapper">
-    <van-empty wx:if="{{result.length == 0}}" image="search" description="暂无数据" />
+    <van-empty wx:if="{{result.length == 0 && !isLoading}}" image="search" description="暂无数据" />
     <view wx:for="{{ result }}" wx:key="index" class="i-card">
       <view class="i-card-title">
         <image src="/images/pages/auto.svg"></image>
-        <text>车架号 :  {{ item.no }}</text>
+        <text>车架号 :  {{ item.vehNo }}</text>
       </view>
       <view class="i-card-content">
-        <text>所属机构：企业+下级</text>
+        <text>所属机构：{{ item.companyName + ' '+ item.groupCodeName }}</text>
         <van-row>
-          <van-col span="12">所属分组：</van-col>
-           <van-col span="12">车辆类型：{{ item.carType }}</van-col>
+          <van-col span="12">所属分组：{{ item.belongGroup }}</van-col>
+          <van-col span="12">车辆类型：{{ item.vehicleType }}</van-col>
         </van-row>
-        <van-row>
-          <van-col span="12">车牌号：</van-col>
-          <van-col span="12">总行驶时长：</van-col>
-        </van-row>
-        <van-row>
-          <van-col span="12">区间行驶时长：</van-col>
-          <van-col span="12">今日行驶时长：</van-col>
-        </van-row>
+        <block wx:if="{{type == 'duration'}}">
+          <van-row>
+            <van-col span="12">车牌号：{{ item.licenseNo }}</van-col>
+            <van-col span="12">总行驶时长：{{ item.runDurationStr }}</van-col>
+          </van-row>
+          <van-row>
+            <van-col span="12">区间行驶时长：{{ item.intervalRunDurationStr }}</van-col>
+            <van-col span="12">今日行驶时长：{{ item.dayRunDurationStr }}</van-col>
+          </van-row>
+        </block>
+        <block wx:if="{{type == 'charging'}}">
+          <van-row>
+            <van-col span="12">车牌号：{{ item.licenseNo }}</van-col>
+            <van-col span="12">充电总次数：{{ item.chargingCount }}</van-col>
+          </van-row>
+          <van-row>
+            <van-col span="12">当前电压：{{ item.celeVol }}</van-col>
+            <van-col span="12">当前SOC（%）：{{ item.csoc }}</van-col>
+          </van-row>
+        </block>
+        <block wx:if="{{type == 'carbon'}}">
+          <van-row>
+            <van-col span="12">车牌号：{{ item.licenseNo }}</van-col>
+            <van-col span="12">总行驶里程：{{ item.mileage }}</van-col>
+          </van-row>
+          <van-row>
+            <van-col span="12">区间行驶里程：{{ item.intervalMileage }}</van-col>
+            <van-col span="12">今日行驶里程：{{ item.dayMileage }}</van-col>
+          </van-row>
+        </block>
       </view>
     </view>
-    <mp-loading type="circle"></mp-loading>
+    <mp-loading type="circle" wx:if="{{isLoading}}"></mp-loading>
   </view>
-  <van-calendar color="#2BA245" show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" default-date="{{ dateRange1 }}" bind:confirm="onConfirm" bind:close="onClosed" type="range" round="false" />
+  <van-calendar color="#2BA245" show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" default-date="{{ dateRange }}" bind:confirm="onConfirm" bind:close="onClosed" type="range" round="false" />
 </view>
