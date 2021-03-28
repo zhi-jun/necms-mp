@@ -1,44 +1,29 @@
 <!--pages/map/map.wxml-->
+<wxs src="./map-track.wxs" module="computed"></wxs>
 <view class="map-track-wrapper">
-  <van-cell is-link title="查询范围" bind:click="onCalendarShow" style="width:100%;flex:none"
+  <van-cell is-link title="查询范围" title-width="200rpx" bind:click="onCalendarShow" style="width:100%;flex:none;"
     value="{{ computed.formatRange(dateRange1) }}" />
   <map id="map" class="map-track-body" scale="14" longitude="{{longitude}}" latitude="{{latitude}}"
     markers="{{markers}}" polyline="{{polyline}}" show-location style="width: 100%;">
-    <cover-view class="cover-view">
-      <cover-view class="container">
-        <cover-view class="flex-wrp" style="flex-direction:row;">
-          <cover-view class="flex-item" bindtap="endTrack">
-            <cover-image src="/images/pages/replay.png"></cover-image>
-          </cover-view>
-          <cover-view class="flex-item" wx:if="{{playIndex==0}}" bindtap="beginTrack">
-            <cover-image src="/images/pages/play.png"></cover-image>
-          </cover-view>
-          <cover-view class="flex-item" wx:else bindtap="pauseTrack">
-            <cover-image src="/images/pages/pause.png"></cover-image>
-          </cover-view>
-          <cover-view class="flex-item">
-            X1
-          </cover-view>
-        </cover-view>
-      </cover-view>
-      <!-- <van-grid clickable column-num="3" >
-        <van-grid-item icon="replay" bindclick="endTrack" />
-        <van-grid-item icon="play-circle-o" bindclick="beginTrack" />
-        <van-grid-item icon="pause-circle-o" bindclick="pauseTrack" />
-      </van-grid> -->
-    </cover-view>
   </map>
 
   <view class="map-footer">
+    <view class="cover-view">
+      <van-button wx:if="{{!isDisabled}}" icon="play-circle-o" bind:click="startTrack" block style="width:100%">
+      </van-button>
+      <van-button wx:else icon="replay" bind:click="endTrack" block style="width:100%"></van-button>
+
+      <van-button bind:click="changeInterval" block style="width:100%"> X{{interval}}</van-button>
+    </view>
 
     <van-cell title="点击查看详细信息" is-link arrow-direction="{{isCollospae?'up':'down' }}" bind:click="handleCollspa"
       style="flex:none" />
     <view wx:if="{{isCollospae}}" class="mp-footer-main">
       <view wx:for="{{jdata}}" wx:key="index" class="mp-footer-card">
         <view>时间:{{item.gtime}}</view>
-        <view>经纬度：{{ item.lat}} ,{{ item.lng}}</view>
+        <view>经纬度：{{ item.plat}} ,{{ item.plng}}</view>
         <view>状态:{{item.gpsStatus}}</view>
-        <view>地址:{{ item.cworkSts}}</view>
+        <view>地址:{{ item.addr}}</view>
       </view>
     </view>
 
@@ -46,5 +31,5 @@
   </view>
   <van-calendar color="#2BA245" show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}"
     default-date="{{ dateRange1 }}" bind:confirm="onConfirm" bind:close="onClosed" type="range" round="false" />
-
+  <van-dialog id="van-dialog" />
 </view>

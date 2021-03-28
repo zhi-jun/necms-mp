@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/map/map-track/map-track",
     "pages/data-center/data-center-index/data-center-index",
 
     "pages/car/car-list/car-list",
