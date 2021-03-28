@@ -2,11 +2,11 @@
 <view class="map-wrapper">
   <map id="map" longitude="{{mapInfo.lng}}" latitude="{{mapInfo.lat}}" scale="16" markers="{{markers}}"
     polyline="{{polyline}}" show-location style="width: 100%;" class="map-body">
-    <cover-view wx:if="{{!isDisabled}}" class="cover-view">
+    <view wx:if="{{!isDisabled}}" class="cover-view">
       <van-button type="info" custom-style="opacity:0.7" round icon="replay" bind:click="jumpTo" size="small">
         轨迹回放
       </van-button>
-    </cover-view>
+    </view>
   </map>
   <view class="map-footer">
     <view class="cardNo">车架号: {{mapInfo.cardNo}}</view>
@@ -16,9 +16,21 @@
     <view>最后时间:{{mapInfo.lastTime}}</view>
     <view>最后地址:{{ mapInfo.address}}</view>
     <view wx:if="{{!isDisabled}}" class="operator">
-      <van-button type="primary" size="small" round>一键锁车</van-button>
-      <van-button type="primary" size="small" custom-style="margin-left:8rpx;" round>解除锁车</van-button>
+      <van-button type="primary" size="small" round bind:click="handleBind" data-optype="1">一键锁车</van-button>
+      <van-button type="primary" size="small" custom-style="margin-left:8rpx;" round data-optype="2"
+        bind:click="handleBind">解除锁车</van-button>
     </view>
   </view>
-   <van-dialog id="van-dialog" />
+  <van-dialog id="van-dialog" />
+  
+  <!-- <van-dialog use-slot title="请输入密码" show="{{ show }}" show-cancel-button bind:close="onClose"
+  before-close="{{ beforeClose }}" >
+    <van-cell-group>
+      <van-field value="{{ password }}" label="指令密码" placeholder="请输入密码" error />
+    </van-cell-group>
+  </van-dialog> -->
+  <van-popup show="{{ show }}" round  custom-style="width:70%; height: 25%;padding:5% 20rpx;display:flex;flex-direction:column;    justify-content: space-between;" bind:close="onClose">
+    <van-field value="{{ password }}" label="指令密码" placeholder="请输入密码名" error-message="{{errmsg}}"  bind:change="onChangePSD"/>
+    <van-button type="primary" round block bind:click="handleSubmit">提交</van-button>
+  </van-popup>
 </view>

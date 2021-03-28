@@ -1,5 +1,6 @@
 // pages/map/map.js
 import Dialog from '@vant/weapp/dialog/dialog'
+import Toast from '@vant/weapp/toast/toast';
 const { convert2TecentMap, compareVersion, formatDate } = require('../../../utils/util')
 const { request } = require('../../../utils/ajax')
 Page({
@@ -53,11 +54,11 @@ Page({
       this.setData({
         isDisabled: false
       });
-    }, 32 * 1000 / this.data.interval);
+    }, 64 * 1000 / this.data.interval);
     mapCtx.moveAlong({
       markerId: 0,
       path: this.data.polyline[0].points,
-      duration: 32 * 1000 / this.data.interval,
+      duration: 64 * 1000 / this.data.interval,
       autoRotate: true
     });
   },
@@ -113,12 +114,20 @@ Page({
     });
   },
   queryTrack() {
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      duration:0
+    });
     request({
       url: '/applets/monitor/findPlayback',
-      data: { veh: wx.getStorageSync('vin'),startTime:this.data.dateRange1[0],endTime:this.data.dateRange1[1] }, //
+      data: { veh: 'LBVKY5103JSP0000',
+      startTime: decodeURIComponent (`${this.data.dateRange1[0]} 00:00:00`),
+      endTime:decodeURIComponent (`${this.data.dateRange1[1]} 00:00:00`)  }, //
       method: 'get'
     },
       res => {
+        Toast.clear();
         if (res.code != "00000000") {
           this.setData({
             isDisabled: true
@@ -127,7 +136,7 @@ Page({
             message: res.message,
             confirmButtonText: '返回'
           }).then(() => {
-            setTimeout(function () { wx.navigateBack({ delta: 1 }); }, 200);
+            // setTimeout(function () { wx.navigateBack({ delta: 1 }); }, 200);
           });
           return
         }

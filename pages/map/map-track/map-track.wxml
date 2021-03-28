@@ -21,7 +21,7 @@
     <view wx:if="{{isCollospae}}" class="mp-footer-main">
       <view wx:for="{{jdata}}" wx:key="index" class="mp-footer-card">
         <view>时间:{{item.gtime}}</view>
-        <view>经纬度：{{ item.plat}} ,{{ item.plng}}</view>
+        <view>经纬度：{{ item.plat}} ,{{ item.plon}}</view>
         <view>状态:{{item.gpsStatus}}</view>
         <view>地址:{{ item.addr}}</view>
       </view>
@@ -32,4 +32,5 @@
   <van-calendar color="#2BA245" show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}"
     default-date="{{ dateRange1 }}" bind:confirm="onConfirm" bind:close="onClosed" type="range" round="false" />
   <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
 </view>

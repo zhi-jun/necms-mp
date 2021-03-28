@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/map/map-index/map-index",
     "pages/map/map-track/map-track",
     "pages/data-center/data-center-index/data-center-index",
     "pages/car/car-list/car-list",
@@ -9,7 +10,6 @@
     "pages/car/car-add/car-add",
     "pages/home/home",
     "pages/car/car-device/car-device",
-    "pages/map/map-index/map-index",
     "pages/car/car-detail/car-detail",
     "pages/driver/driver-index/driver-index",
     "pages/task-set/task-set-index/task-set-index"
@@ -38,6 +38,8 @@
     "van-tabs": "@vant/weapp/tabs/index",
     "van-toast": "@vant/weapp/toast/index",
     "van-dialog": "@vant/weapp/dialog/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-popup": "@vant/weapp/popup/index",
 
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-toptips": "weui-miniprogram/toptips/toptips",

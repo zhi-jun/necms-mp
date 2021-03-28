@@ -19,7 +19,11 @@ Page({
       status: '',
       lastTime: '',
       address: ''
-    }
+    },
+    orderType: '',
+    password: '',
+    show: false,
+    errmsg: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -86,7 +90,7 @@ Page({
   queryLocation() {
     request({
       url: '/applets/monitor/findNewMonitor',
-      data: { veh:  wx.getStorageSync('vin') }, //
+      data: { veh: wx.getStorageSync('vin') },
       method: 'get'
     },
       res => {
@@ -134,4 +138,51 @@ Page({
         })
       })
   },
+
+  /**
+   * 一键解锁车
+   */
+  handleBind(e) {
+    const type = e.currentTarget.dataset.optype
+    this.setData({
+      show: true,
+      orderType: type
+    })
+  },
+  handleSubmit() {
+    if (!this.data.password) {
+      return false
+    }
+
+    request({
+      url: '/applets/monitor/carOrderSend',
+      data: { veh: 'LBVKY5103JSP0000', orderType: this.data.orderType, orderPassword: this.data.password },
+      method: 'post'
+    },
+      res => {
+        if (res.code != "00000000") {
+          this.setData({
+            errmsg: res.message
+          })
+          return
+        }
+
+        this.setData({
+          password: '',
+          errmsg: '',
+          show: false
+        })
+      })
+  },
+  onChangePSD(event) {
+    this.setData({
+      password: event.detail
+    })
+  },
+  onClose() {
+    this.setData({
+      show: false,
+      password: ''
+    })
+  }
 })
