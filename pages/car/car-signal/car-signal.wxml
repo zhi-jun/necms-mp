@@ -1,3 +1,4 @@
+<wxs src="./car-signal.wxs" module="computed"></wxs>
 <view class="container">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <!-- <view class="search-warp">
@@ -22,7 +23,7 @@
         <van-row>
           <van-col span="12">所属分组：{{item.belongGroup}}</van-col>
           <van-col span="12">车辆类型：{{item.vehicleType}}</van-col>
-          <van-col span="24">发生时间：{{item.updateTime}}</van-col>
+          <van-col span="24">发生时间：{{ computed.dateStr(item.updateTime)}}</van-col>
           <van-col span="24">
             消息内容： {{ (item.msgType == '应答'?item.replyContent : item.sendContent) }}
           </van-col>
