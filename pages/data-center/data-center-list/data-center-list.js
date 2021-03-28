@@ -3,7 +3,7 @@ const { formatDate } = require('../../../utils/util')
 
 Page({
   data: {
-    type: wx.getStorageSync("dataCenterType"),
+    type: '',
     showCalendar: false,
     minDate: new Date(2021, 0, 1).getTime(),
     maxDate: new Date().getTime(),
@@ -15,7 +15,8 @@ Page({
     result: [],
     isLoading: false
   },
-  onLoad() {
+  onShow() {
+    this.setData({ type: wx.getStorageSync("dataCenterType") });
     this.onSearch()
   },
   onChange(e) {
@@ -29,6 +30,7 @@ Page({
       dateRange: e.detail.map(date => new Date(date.valueOf()).getTime()),
       showCalendar: false
     });
+    this.onSearch()
   },
   onClosed() {
     this.setData({ showCalendar: false });

@@ -5,7 +5,7 @@ Page({
     vehData:{},
     vehDescData:{}
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     this.queryDevice()
   },
   queryDevice(){

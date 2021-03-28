@@ -7,7 +7,7 @@ Page({
     ],
     navActive: 0,
   },
-  onLoad: function () {
+  onShow: function () {
     if (!wx.getStorageSync("tokenId"))
       wx.redirectTo({ url: '/pages/login/login' });
   },

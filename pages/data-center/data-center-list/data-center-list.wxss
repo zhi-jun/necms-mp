@@ -19,3 +19,11 @@
   padding-top: 200rpx;
   padding-bottom: 60rpx;
 }
+
+.i-card-content {
+  font-size: 22rpx;
+}
+
+.action-btn{
+  color: #10aeff;
+}

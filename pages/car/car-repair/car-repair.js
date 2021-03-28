@@ -9,7 +9,7 @@ Page({
     result: [],
     isLoading: false
   },
-  onLoad() {
+  onShow() {
     this.onSearch()
   },
   onChange(e) {
