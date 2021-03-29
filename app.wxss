@@ -98,3 +98,7 @@ page {
   line-height: 56rpx;
   color: #5b5b5b;
 }
+
+.van-search__action--hover, .van-search__action:hover{
+  background-color: white;
+}

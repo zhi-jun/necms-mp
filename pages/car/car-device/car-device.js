@@ -2,16 +2,16 @@ const { request } = require('../../../utils/ajax')
 
 Page({
   data: {
-    vehData:{},
-    vehDescData:{}
+    vehData: {},
+    vehDescData: {}
   },
-  onShow: function (options) {
+  onLoad() {
     this.queryDevice()
   },
-  queryDevice(){
+  queryDevice() {
     request({
       url: '/applets/monitor/findCarDetail',
-      data: { veh:wx.getStorageSync('vin')},
+      data: { veh: wx.getStorageSync('vin') },
       method: 'get'
     },
       res => {

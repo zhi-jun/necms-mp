@@ -1,5 +1,5 @@
 //接口地址host
-const baseUrl = "http://60.168.131.134:9001"
+const baseUrl = "https://xny.leadu.com.cn"
 
 var isLoading = false //防止重复提交
 
@@ -37,6 +37,16 @@ const request = (options, cb) => {
           wx.redirectTo({ url: '/pages/login/login' });
           return
         }
+        // console.log('************1', res.data.data);
+        // if (res.data.data) {
+        //   for (const key in res.data.data) {
+        //     console.log('************2', res.data.data[key]);
+        //     if (res.data.data[key] == null) {
+        //       res.data.data[key] = ''
+        //     }
+        //   }
+        // }
+        setEmpty(res.data)
         if (cb)
           cb(res.data)
       },
@@ -48,6 +58,21 @@ const request = (options, cb) => {
       }
     }
   );
+}
+
+//null => ''
+function setEmpty(data) {
+  if (data == null)
+    return
+  if (data.length > 0) //列表不处理
+    return
+  for (const k in data) {
+    if (data[k] == null) {
+      data[k] = ''
+    }
+    else if (typeof (data[k] == 'object'))
+      setEmpty(data[k])
+  }
 }
 
 module.exports = {

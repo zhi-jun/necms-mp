@@ -13,7 +13,7 @@ Page({
       totalCarbon: 0 // 减排量
     }
   },
-  onShow: function () {
+  onLoad() {
     request({
       url: '/applets/data_center/findDataCenterVo',
       data: {},

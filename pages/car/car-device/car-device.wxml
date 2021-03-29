@@ -1,6 +1,6 @@
 <view class="container">
   <van-tabs color="#2BA245" animated>
-    <van-tab title="国籍数据" class="tab-wrap">
+    <van-tab title="国标数据" class="tab-wrap">
       <!-- 定位及终端 -->
       <view class="info-title">
         <text>定位及终端</text>
@@ -151,10 +151,10 @@
       </view>
     </van-tab>
     <van-tab title="用户自定义" class="tab-wrap">
-      <view class="info-title">
+      <!--<view class="info-title">
         <text>定位及终端</text>
       </view>
-      <view class="info-content">
+       <view class="info-content">
         <van-row>
           <van-col span="9" class="card-label">VIN：</van-col>
           <van-col span="14">{{vehData.veh}}</van-col>
@@ -179,7 +179,7 @@
           <van-col span="9" class="card-label">维度：</van-col>
           <van-col span="14">{{vehData.plat}}</van-col>
         </van-row>
-      </view>
+      </view> -->
     </van-tab>
   </van-tabs>
 </view>

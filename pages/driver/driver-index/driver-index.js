@@ -2,10 +2,7 @@ Page({
   data: {
 
   },
-
-  onLoad(options) {
-  },
-  onShow() {
+  onLoad() {
     wx.showToast({ title: '暂未开放' })
   },
 })

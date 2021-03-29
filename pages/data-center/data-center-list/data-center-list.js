@@ -15,7 +15,7 @@ Page({
     result: [],
     isLoading: false
   },
-  onShow() {
+  onLoad() {
     this.setData({ type: wx.getStorageSync("dataCenterType") });
     this.onSearch()
   },
